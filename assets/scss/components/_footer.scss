@@ -1,0 +1,71 @@
+.footer {
+  .footerTop {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+
+    .address {
+      width: 25%;
+      display: flex;
+      align-items: center;
+      a {
+        color: #9f9f9f;
+      }
+    }
+
+    h3 {
+      color: #9f9f9f;
+      font-weight: 500;
+      margin-bottom: 40px;
+    }
+
+    .links {
+      .linkList {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+
+    .help {
+      .helpList {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+
+    .newsletter {
+      width: 30%;
+      .newsletterForm {
+        display: flex;
+        gap: 15px;
+        input {
+          border: none;
+          border-bottom: 1px solid #000;
+          outline: none;
+          padding: 3px 0;
+          width: 200px;
+          &::placeholder {
+            color: #9f9f9f;
+          }
+        }
+
+        button {
+          border: none;
+          background-color: #fff;
+          border-bottom: 1px solid #000;
+          text-transform: uppercase;
+          font-weight: 600;
+          letter-spacing: 1px;
+          width: 75px;
+        }
+      }
+    }
+  }
+
+  .footerBottom {
+    border-top: 1px solid #d9d9d9;
+    padding: 40px 0;
+  }
+}
