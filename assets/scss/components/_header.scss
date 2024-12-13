@@ -1,0 +1,25 @@
+.header {
+  background-color: tra;
+  .row {
+    height: 100px;
+    align-items: center;
+    justify-content: flex-end;
+    .navBar {
+      display: flex;
+      width: 30%;
+      .navList {
+        display: flex;
+        gap: 50px;
+      }
+    }
+
+    .userArea {
+      width: 38%;
+      .userAreaList {
+        display: flex;
+        justify-content: flex-end;
+        gap: 35px;
+      }
+    }
+  }
+}

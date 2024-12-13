@@ -1,7 +1,50 @@
+@font-face {
+  font-family: "Poppins";
+  src: url(../fonts/Poppins-Regular.ttf);
+}
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+a {
+  color: #000;
+}
+
+.header {
+  background-color: tra;
+}
+.header .row {
+  height: 100px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header .row .navBar {
+  display: flex;
+  width: 30%;
+}
+.header .row .navBar .navList {
+  display: flex;
+  gap: 50px;
+}
+.header .row .userArea {
+  width: 38%;
+}
+.header .row .userArea .userAreaList {
+  display: flex;
+  justify-content: flex-end;
+  gap: 35px;
 }/*# sourceMappingURL=index.css.map */
