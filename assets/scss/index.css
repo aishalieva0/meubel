@@ -25,7 +25,7 @@ a {
 }
 
 .header {
-  background-color: tra;
+  background: #fbebb5;
 }
 .header .row {
   height: 100px;
@@ -100,13 +100,77 @@ a {
 .footer .footerTop .newsletter .newsletterForm button {
   border: none;
   background-color: #fff;
-  border-bottom: 1px solid #000;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
   width: 75px;
+  cursor: pointer;
+  position: relative;
+}
+.footer .footerTop .newsletter .newsletterForm button::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition: transform 0.4s ease-in-out;
+  transform-origin: right;
+}
+.footer .footerTop .newsletter .newsletterForm button:hover::after {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.footer .footerTop .newsletter .newsletterForm button::after {
+  height: 1px;
 }
 .footer .footerBottom {
   border-top: 1px solid #d9d9d9;
   padding: 40px 0;
+}
+
+.hero {
+  background: #fbebb5;
+  width: 100%;
+}
+.hero .row {
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+.hero .row .heroContent {
+  max-width: 45%;
+  padding-left: 90px;
+}
+.hero .row .heroContent h2 {
+  font-size: 64px;
+  font-weight: 500;
+}
+.hero .row .heroContent a {
+  font-size: 24px;
+  position: relative;
+}
+.hero .row .heroContent a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition: transform 0.4s ease-in-out;
+  transform-origin: right;
+}
+.hero .row .heroContent a:hover::after {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.hero .row .heroImg {
+  max-width: 70%;
+}
+.hero .row .heroImg img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }/*# sourceMappingURL=index.css.map */

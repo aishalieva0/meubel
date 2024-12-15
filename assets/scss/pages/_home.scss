@@ -1,0 +1,33 @@
+@import "../mixins";
+
+.hero {
+  background: #fbebb5;
+  width: 100%;
+  .row {
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    .heroContent {
+      max-width: 45%;
+      padding-left: 90px;
+      h2 {
+        font-size: 64px;
+        font-weight: 500;
+      }
+      a {
+        font-size: 24px;
+        @include primaryBtn;
+      }
+    }
+
+    .heroImg {
+      max-width: 70%;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}
