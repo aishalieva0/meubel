@@ -86,10 +86,10 @@ a {
 }
 .footer .footerTop .newsletter .newsletterForm input {
   border: none;
-  border-bottom: 1px solid #000;
   outline: none;
   padding: 3px 0;
   width: 200px;
+  border-bottom: 1px solid #000;
 }
 .footer .footerTop .newsletter .newsletterForm input::-moz-placeholder {
   color: #9f9f9f;
@@ -124,12 +124,75 @@ a {
 }
 .footer .footerTop .newsletter .newsletterForm button::after {
   height: 1px;
+  bottom: 0;
+  width: 100%;
 }
 .footer .footerBottom {
   border-top: 1px solid #d9d9d9;
   padding: 40px 0;
 }
 
+@media (max-width: 800px) {
+  .footer .footerTop h3 {
+    margin-bottom: 15px;
+  }
+  .footer .footerTop .links .linkList {
+    gap: 5px;
+  }
+  .footer .footerTop .help .helpList {
+    gap: 5px;
+  }
+  .footer .footerTop .newsletter .newsletterForm {
+    flex-direction: column;
+  }
+}
+@media (max-width: 700px) {
+  .footer {
+    font-size: 13px;
+    text-align: center;
+  }
+  .footer .footerTop {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  .footer .footerTop .address {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .footer .footerTop h3 {
+    margin-bottom: 5px;
+  }
+  .footer .footerTop .links {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .footer .footerTop .links .linkList {
+    gap: 2px;
+  }
+  .footer .footerTop .help {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .footer .footerTop .help .helpList {
+    gap: 2px;
+  }
+  .footer .footerTop .newsletter {
+    margin-top: 15px;
+    width: 100%;
+  }
+  .footer .footerTop .newsletter .newsletterForm {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .footerTop .newsletter .newsletterForm input {
+    width: 250px;
+    text-align: center;
+  }
+  .footer .footerBottom {
+    padding: 10px 0;
+  }
+}
 .hero {
   background: #fbebb5;
   width: 100%;
