@@ -23,3 +23,16 @@
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .header {
+    .row {
+      .navBar {
+        display: none;
+      }
+      .userArea {
+        display: none;
+      }
+    }
+  }
+}

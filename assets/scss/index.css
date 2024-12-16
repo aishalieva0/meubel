@@ -49,6 +49,14 @@ a {
   gap: 35px;
 }
 
+@media (max-width: 1000px) {
+  .header .row .navBar {
+    display: none;
+  }
+  .header .row .userArea {
+    display: none;
+  }
+}
 .footer .footerTop {
   display: flex;
   justify-content: space-between;
@@ -236,4 +244,40 @@ a {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.social {
+  background: url(../img/Group\ 43.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 450px;
+  display: flex;
+  align-items: center;
+}
+.social .row {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.social .row .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.social .row .content h3 {
+  font-size: 60px;
+  font-weight: 700 !important;
+}
+.social .row .content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.social .row .content a {
+  background-color: #fff;
+  text-transform: capitalize;
+  padding: 10px 0;
+  width: 255px;
+  margin: 0 auto;
+  border-radius: 22px;
 }/*# sourceMappingURL=index.css.map */

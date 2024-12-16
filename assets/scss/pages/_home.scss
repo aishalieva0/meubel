@@ -31,3 +31,40 @@
     }
   }
 }
+
+.social {
+  background: url(../img/Group\ 43.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  .row {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h3 {
+        font-size: 60px;
+        font-weight: 700 !important;
+      }
+      p {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      a {
+        background-color: #fff;
+        text-transform: capitalize;
+        padding: 10px 0;
+        width: 255px;
+        margin: 0 auto;
+        border-radius: 22px;
+      }
+    }
+  }
+}
