@@ -413,10 +413,15 @@ a {
   margin-bottom: 30px;
 }
 .social .row .content a {
-  background-color: #fff;
+  background: #faf4f4;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1019607843);
   text-transform: capitalize;
   padding: 10px 0;
-  width: 255px;
+  width: 200px;
   margin: 0 auto;
   border-radius: 22px;
+  transition: transform 0.3s;
+}
+.social .row .content a:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=index.css.map */
