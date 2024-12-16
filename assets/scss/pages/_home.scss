@@ -32,6 +32,79 @@
   }
 }
 
+.blog {
+  text-align: center;
+  margin: 40px 0;
+
+  .row {
+    flex-direction: column;
+    .title {
+      text-align: center;
+      h3 {
+        font-size: 36px;
+      }
+      p {
+        color: #9f9f9f;
+      }
+    }
+    .content {
+      display: flex;
+      margin: 40px 0;
+      gap: 50px;
+      .card {
+        text-align: center;
+        .cardImg {
+          img {
+            width: 360px;
+            height: 360px;
+            object-fit: cover;
+          }
+        }
+        p {
+          font-size: 18px;
+        }
+        a {
+          font-weight: 600;
+          text-transform: capitalize;
+          @include primaryBtn;
+          &::after {
+            bottom: -6px;
+          }
+        }
+        .date {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+          gap: 12px;
+          img {
+            width: 18px;
+          }
+          .passedTime {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+          }
+
+          .publishDate {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+          }
+        }
+      }
+    }
+    .path {
+      a {
+        text-transform: capitalize;
+        @include primaryBtn;
+        &::after {
+          bottom: -10px;
+        }
+      }
+    }
+  }
+}
+
 .social {
   background: url(../img/Group\ 43.png);
   background-size: cover;
