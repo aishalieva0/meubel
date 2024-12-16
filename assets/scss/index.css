@@ -118,7 +118,7 @@ a {
 .footer .footerTop .newsletter .newsletterForm button::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -8px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -225,7 +225,7 @@ a {
 .hero .row .heroContent a::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -8px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -244,6 +244,50 @@ a {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.categories {
+  background: #faf4f4;
+  padding: 50px 0;
+}
+.categories .row {
+  justify-content: space-between;
+}
+.categories .row .singleItem .catImg {
+  height: 300px;
+  width: 500px;
+}
+.categories .row .singleItem .catImg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+}
+.categories .row .singleItem .details {
+  padding-left: 40px;
+}
+.categories .row .singleItem .details h3 {
+  font-size: 36px;
+  font-weight: 600;
+}
+.categories .row .singleItem .details a {
+  font-weight: 500;
+  font-size: 24px;
+  position: relative;
+}
+.categories .row .singleItem .details a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition: transform 0.4s ease-in-out;
+  transform-origin: right;
+}
+.categories .row .singleItem .details a:hover::after {
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
 .blog {
@@ -287,7 +331,7 @@ a {
 .blog .row .content .card a::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -8px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -328,7 +372,7 @@ a {
 .blog .row .path a::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -8px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -339,9 +383,6 @@ a {
 .blog .row .path a:hover::after {
   transform: scaleX(0);
   transform-origin: left;
-}
-.blog .row .path a::after {
-  bottom: -10px;
 }
 
 .social {

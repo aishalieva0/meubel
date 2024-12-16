@@ -32,6 +32,37 @@
   }
 }
 
+.categories {
+  background: #faf4f4;
+  padding: 50px 0;
+  .row {
+    justify-content: space-between;
+    .singleItem {
+      .catImg {
+        height: 300px;
+        width: 500px;
+        img {
+          object-fit: cover;
+          max-width: 100%;
+        }
+      }
+      .details {
+        padding-left: 40px;
+        h3 {
+          font-size: 36px;
+          font-weight: 600;
+        }
+
+        a {
+          font-weight: 500;
+          font-size: 24px;
+          @include primaryBtn;
+        }
+      }
+    }
+  }
+}
+
 .blog {
   text-align: center;
   margin: 40px 0;
@@ -97,9 +128,6 @@
       a {
         text-transform: capitalize;
         @include primaryBtn;
-        &::after {
-          bottom: -10px;
-        }
       }
     }
   }
