@@ -466,8 +466,9 @@ a {
 }
 .blog .row .content {
   display: flex;
+  justify-content: center;
   margin: 40px 0;
-  gap: 50px;
+  gap: 27px;
 }
 .blog .row .content .card {
   text-align: center;
@@ -614,6 +615,18 @@ a {
   }
   .categories .row .singleItem .details a {
     font-size: 20px;
+  }
+  .blog .content {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 878px) {
+  .blog .content .card {
+    width: 100% !important;
+  }
+  .blog .content .card .cardImg img {
+    width: 100% !important;
+    height: auto !important;
   }
 }
 @media (max-width: 841px) {
