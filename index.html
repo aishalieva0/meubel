@@ -48,8 +48,9 @@
                                 <img src="./assets/img/icons/mdi_account-alert-outline.png" alt="user">
                             </a>
                         </li>
-                        <li class="userAreaItem">
-                            <img src="./assets/img/icons/akar-icons_search.png" alt="search">
+                        <li class="userAreaItem" id="searchBtn">
+                            <i class="fa-solid fa-x" id="closeIcon"></i>
+                            <img src="./assets/img/icons/akar-icons_search.png" id="searchIcon" alt="search">
                         </li>
                         <li class="userAreaItem">
                             <a href="#">
@@ -62,6 +63,10 @@
                             </a>
                         </li>
                     </ul>
+                    <div class="searchBox">
+                        <img src="./assets/img/icons/akar-icons_search.png" alt="search">
+                        <input type="text" name="search" id="search" placeholder="Search..">
+                    </div>
                 </nav>
             </div>
         </div>
@@ -270,6 +275,9 @@
         </div>
     </footer>
     <!-- Footer end -->
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/5572bb5cab.js" crossorigin="anonymous"></script>
 
     <!-- Custom JavaScript -->
     <script src="./assets/js/main.js"></script>

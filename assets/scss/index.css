@@ -24,8 +24,17 @@ a {
   color: #000;
 }
 
+.active {
+  display: block !important;
+}
+
+.activeFlex {
+  display: flex !important;
+}
+
 .header {
   background: #fbebb5;
+  position: relative;
 }
 .header .container .row {
   height: 100px;
@@ -56,13 +65,13 @@ a {
 .header .container .row .hamburger span:nth-child(3) {
   top: 8px;
 }
-.header .container .row .active span:nth-child(1) {
+.header .container .row .opened span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
-.header .container .row .active span:nth-child(2) {
+.header .container .row .opened span:nth-child(2) {
   transform: translateX(-100px);
 }
-.header .container .row .active span:nth-child(3) {
+.header .container .row .opened span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
 .header .container .row .navBar {
@@ -79,6 +88,51 @@ a {
 .header .container .row .navBar .userAreaList {
   display: flex;
   gap: 35px;
+  align-items: center;
+  justify-content: center;
+}
+.header .container .row .navBar .userAreaList .userAreaItem {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 28px;
+  transition: 0.5s ease;
+}
+.header .container .row .navBar .userAreaList .userAreaItem img {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  transition: 0.5s ease;
+}
+.header .container .row .navBar .userAreaList .userAreaItem #closeIcon {
+  display: none;
+  font-size: 23px;
+  font-weight: 400;
+  transition: 0.5s ease;
+}
+.header .container .row .navBar .searchBox {
+  display: none;
+  position: absolute;
+  bottom: -62px;
+  right: 0;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  width: 40%;
+  padding: 20px;
+  box-shadow: #ddd -3px 3px 8px;
+  transition: 0.5s ease-in-out;
+}
+.header .container .row .navBar .searchBox img {
+  width: 20px;
+}
+.header .container .row .navBar .searchBox input {
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 100%;
+  margin-left: 10px;
 }
 
 @media (max-width: 850px) {
@@ -95,11 +149,11 @@ a {
   .header .container .row .navBar .userAreaList .userAreaItem img {
     width: 24px;
   }
+  .header .container .row .navBar .userAreaList .userAreaItem #closeIcon {
+    font-size: 20px;
+  }
 }
 @media (max-width: 650px) {
-  .header {
-    position: relative;
-  }
   .header .container {
     width: 90%;
   }
@@ -114,10 +168,10 @@ a {
     position: absolute;
     top: 0;
     left: -100%;
-    padding-top: 60px;
+    padding-top: 120px;
     background: #fbebb5;
     flex-direction: column-reverse;
-    gap: 10px;
+    gap: 15px;
     width: 250px;
     height: 100vh;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
@@ -127,13 +181,27 @@ a {
   }
   .header .container .row .navBar .navList {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
   .header .container .row .navBar .navList .navItem {
     padding-left: 15px;
   }
   .header .container .row .navBar .userAreaList {
     justify-content: center;
+  }
+  .header .container .row .navBar .userAreaList #searchBtn {
+    display: none;
+  }
+  .header .container .row .navBar .searchBox {
+    display: flex;
+    bottom: inherit;
+    right: inherit;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 0 0;
+    padding: 10px 20px;
+    border: none;
   }
   .header .container .row .open {
     left: 0;
