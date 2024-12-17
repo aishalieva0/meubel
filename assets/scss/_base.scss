@@ -31,3 +31,9 @@ a {
 .activeFlex {
   display: flex !important;
 }
+
+.layout {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}

@@ -96,6 +96,7 @@
           padding: 20px;
           box-shadow: #ddd -3px 3px 8px;
           transition: 0.5s ease-in-out;
+          z-index: 9;
           img {
             width: 20px;
           }
@@ -190,7 +191,7 @@
             top: 60px;
             left: 0;
             width: 100%;
-            box-shadow: 0 0 0 0 ;
+            box-shadow: 0 0 0 0;
             padding: 10px 20px;
             border: none;
           }

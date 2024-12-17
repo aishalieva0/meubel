@@ -4,6 +4,7 @@ const searchBtn = document.querySelector('#searchBtn');
 const searchBox = document.querySelector('.searchBox');
 const closeIcon = document.querySelector('#closeIcon');
 const searchIcon = document.querySelector('#searchIcon');
+const layout = document.querySelector('.layout');
 
 hamburger.addEventListener('click', () => {
     navBar.classList.toggle('open');
@@ -19,4 +20,10 @@ searchBtn.addEventListener('click', () => {
         closeIcon.style.display = 'none'
         searchIcon.style.display = 'block'
     }
+})
+
+layout.addEventListener('click', () => {
+    searchBox.classList.remove('activeFlex')
+    closeIcon.style.display = 'none'
+    searchIcon.style.display = 'block'
 })
