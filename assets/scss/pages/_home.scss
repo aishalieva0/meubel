@@ -194,6 +194,29 @@
       }
     }
   }
+
+  .categories {
+    .row {
+      justify-content: center;
+      .singleItem {
+        .catImg {
+          height: 250px;
+          width: 400px;
+        }
+
+        .details {
+          padding-left: 20px;
+          h3 {
+            font-size: 30px;
+          }
+
+          a {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 841px) {
@@ -209,6 +232,28 @@
       }
       .heroImg {
         width: 45%;
+      }
+    }
+  }
+
+  .categories {
+    .row {
+      .singleItem {
+        .catImg {
+          height: 200px;
+          width: 300px;
+        }
+
+        .details {
+          padding-left: 5px;
+          h3 {
+            font-size: 28px;
+          }
+
+          a {
+            font-size: 18px;
+          }
+        }
       }
     }
   }
@@ -236,8 +281,42 @@
       }
     }
   }
+
+  .categories {
+    .row {
+      .singleItem {
+        .catImg {
+          height: 200px;
+          width: 250px;
+        }
+
+        .details {
+          h3 {
+            font-size: 25px;
+          }
+
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
 }
 
+@media (max-width: 535px) {
+  .categories {
+    .row {
+      flex-wrap: wrap;
+      .singleItem {
+        .catImg {
+          height: 250px;
+          width: 400px;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 425px) {
   .hero {
     .row {
@@ -261,6 +340,44 @@
       .heroImg {
         max-width: 50%;
         height: 100%;
+      }
+    }
+  }
+
+  .categories {
+    .row {
+      .singleItem {
+        .catImg {
+          height: 200px;
+          width: 300px;
+        }
+
+        .details {
+          h3 {
+            font-size: 20px;
+          }
+
+          a {
+            font-size: 13px;
+            &::after {
+              height: 1px;
+              bottom: -2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .categories {
+    .row {
+      .singleItem {
+        .catImg {
+          height: 150px;
+          width: 250px;
+        }
       }
     }
   }
