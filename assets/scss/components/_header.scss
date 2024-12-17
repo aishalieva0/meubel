@@ -1,37 +1,136 @@
 .header {
   background: #fbebb5;
-  .row {
-    height: 100px;
-    align-items: center;
-    justify-content: flex-end;
-    .navBar {
-      display: flex;
-      width: 30%;
-      .navList {
-        display: flex;
-        gap: 50px;
-      }
-    }
+  .container {
+    .row {
+      height: 100px;
+      align-items: center;
+      .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        position: relative;
+        z-index: 99;
+        cursor: pointer;
 
-    .userArea {
-      width: 38%;
-      .userAreaList {
+        span:nth-child(1),
+        span:nth-child(2),
+        span:nth-child(3) {
+          width: 28px;
+          height: 3px;
+          border-radius: 15px;
+          background-color: #000;
+          position: absolute;
+          left: 0;
+          transition: all 0.3s ease;
+        }
+
+        span:nth-child(1) {
+          top: -8px;
+        }
+        span:nth-child(3) {
+          top: 8px;
+        }
+      }
+
+      .active {
+        span:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+        span:nth-child(2) {
+          transform: translateX(-100px);
+        }
+        span:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+
+      .navBar {
         display: flex;
+        width: 100%;
         justify-content: flex-end;
-        gap: 35px;
+
+        .navList {
+          display: flex;
+          gap: 50px;
+          width: 65%;
+          justify-content: center;
+        }
+        .userAreaList {
+          display: flex;
+          gap: 35px;
+        }
       }
     }
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 850px) {
   .header {
-    .row {
-      .navBar {
-        display: none;
+    .container {
+      .row {
+        .navBar {
+          justify-content: space-between;
+          .navList {
+            justify-content: flex-start;
+            gap: 25px;
+          }
+
+          .userAreaList {
+            gap: 25px;
+
+            .userAreaItem {
+              img {
+                width: 24px;
+              }
+            }
+          }
+        }
       }
-      .userArea {
-        display: none;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .header {
+    position: relative;
+    .container {
+      width: 90%;
+      .row {
+        height: 60px;
+        justify-content: space-between;
+
+        .hamburger {
+          display: block;
+        }
+        .navBar {
+          position: absolute;
+          top: 0;
+          left: -100%;
+          padding-top: 60px;
+          background: #fbebb5;
+          flex-direction: column-reverse;
+          gap: 10px;
+          width: 250px;
+          height: 100vh;
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+          transition: left 0.5s ease-in-out;
+          z-index: 9;
+          justify-content: flex-end;
+          .navList {
+            flex-direction: column;
+            gap: 10px;
+
+            .navItem {
+              padding-left: 15px;
+            }
+          }
+          .userAreaList {
+            justify-content: center;
+          }
+        }
+        .open {
+          left: 0;
+        }
       }
     }
   }

@@ -27,34 +27,116 @@ a {
 .header {
   background: #fbebb5;
 }
-.header .row {
+.header .container .row {
   height: 100px;
   align-items: center;
+}
+.header .container .row .hamburger {
+  display: none;
+  background: none;
+  border: none;
+  position: relative;
+  z-index: 99;
+  cursor: pointer;
+}
+.header .container .row .hamburger span:nth-child(1),
+.header .container .row .hamburger span:nth-child(2),
+.header .container .row .hamburger span:nth-child(3) {
+  width: 28px;
+  height: 3px;
+  border-radius: 15px;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+.header .container .row .hamburger span:nth-child(1) {
+  top: -8px;
+}
+.header .container .row .hamburger span:nth-child(3) {
+  top: 8px;
+}
+.header .container .row .active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.header .container .row .active span:nth-child(2) {
+  transform: translateX(-100px);
+}
+.header .container .row .active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.header .container .row .navBar {
+  display: flex;
+  width: 100%;
   justify-content: flex-end;
 }
-.header .row .navBar {
-  display: flex;
-  width: 30%;
-}
-.header .row .navBar .navList {
+.header .container .row .navBar .navList {
   display: flex;
   gap: 50px;
+  width: 65%;
+  justify-content: center;
 }
-.header .row .userArea {
-  width: 38%;
-}
-.header .row .userArea .userAreaList {
+.header .container .row .navBar .userAreaList {
   display: flex;
-  justify-content: flex-end;
   gap: 35px;
 }
 
-@media (max-width: 1000px) {
-  .header .row .navBar {
-    display: none;
+@media (max-width: 850px) {
+  .header .container .row .navBar {
+    justify-content: space-between;
   }
-  .header .row .userArea {
-    display: none;
+  .header .container .row .navBar .navList {
+    justify-content: flex-start;
+    gap: 25px;
+  }
+  .header .container .row .navBar .userAreaList {
+    gap: 25px;
+  }
+  .header .container .row .navBar .userAreaList .userAreaItem img {
+    width: 24px;
+  }
+}
+@media (max-width: 650px) {
+  .header {
+    position: relative;
+  }
+  .header .container {
+    width: 90%;
+  }
+  .header .container .row {
+    height: 60px;
+    justify-content: space-between;
+  }
+  .header .container .row .hamburger {
+    display: block;
+  }
+  .header .container .row .navBar {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    padding-top: 60px;
+    background: #fbebb5;
+    flex-direction: column-reverse;
+    gap: 10px;
+    width: 250px;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.5s ease-in-out;
+    z-index: 9;
+    justify-content: flex-end;
+  }
+  .header .container .row .navBar .navList {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .header .container .row .navBar .navList .navItem {
+    padding-left: 15px;
+  }
+  .header .container .row .navBar .userAreaList {
+    justify-content: center;
+  }
+  .header .container .row .open {
+    left: 0;
   }
 }
 .footer .footerTop {
