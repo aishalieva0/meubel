@@ -36,6 +36,36 @@ a {
   width: 100%;
 }
 
+.titleSection {
+  text-align: center;
+}
+.titleSection h3 {
+  font-size: 36px;
+}
+.titleSection p {
+  color: #9f9f9f;
+}
+
+.path a {
+  text-transform: capitalize;
+  position: relative;
+}
+.path a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition: transform 0.4s ease-in-out;
+  transform-origin: right;
+}
+.path a:hover::after {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
 .header {
   background: #fbebb5;
   position: relative;
@@ -448,21 +478,36 @@ a {
   transform-origin: left;
 }
 
+.topPicks .row {
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+}
+.topPicks .row .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 40px 0;
+}
+.topPicks .row .content .card .cardImg {
+  width: 287px;
+  height: 287px;
+}
+.topPicks .row .content .card .cardImg img {
+  max-width: 100%;
+}
+.topPicks .row .content .card .details .price {
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .blog {
   text-align: center;
   margin: 40px 0;
 }
 .blog .row {
   flex-direction: column;
-}
-.blog .row .title {
-  text-align: center;
-}
-.blog .row .title h3 {
-  font-size: 36px;
-}
-.blog .row .title p {
-  color: #9f9f9f;
 }
 .blog .row .content {
   display: flex;
@@ -523,25 +568,6 @@ a {
   display: flex;
   align-items: center;
   gap: 5px;
-}
-.blog .row .path a {
-  text-transform: capitalize;
-  position: relative;
-}
-.blog .row .path a::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #000;
-  transition: transform 0.4s ease-in-out;
-  transform-origin: right;
-}
-.blog .row .path a:hover::after {
-  transform: scaleX(0);
-  transform-origin: left;
 }
 
 .social {

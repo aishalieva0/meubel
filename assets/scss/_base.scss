@@ -37,3 +37,20 @@ a {
   // height: 100vh;
   // position: absolute;
 }
+
+.titleSection {
+  text-align: center;
+  h3 {
+    font-size: 36px;
+  }
+  p {
+    color: #9f9f9f;
+  }
+}
+
+.path {
+  a {
+    text-transform: capitalize;
+    @include primaryBtn;
+  }
+}
