@@ -484,18 +484,30 @@ a {
   margin: 40px 0;
 }
 .topPicks .row .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
+  height: 100%;
   margin: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+.topPicks .row .content .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .topPicks .row .content .card .cardImg {
   width: 287px;
   height: 287px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .topPicks .row .content .card .cardImg img {
   max-width: 100%;
+  width: 100%;
 }
 .topPicks .row .content .card .details .price {
   font-size: 20px;
@@ -661,6 +673,9 @@ a {
   }
 }
 @media (max-width: 1200px) {
+  .topPicks .row .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .social {
     height: 400px;
   }
@@ -769,6 +784,9 @@ a {
     width: 120px;
     font-size: 14px;
   }
+  .topPicks .row .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 @media (max-width: 535px) {
   .categories .row {
@@ -791,6 +809,12 @@ a {
   .social .row .content a {
     width: 120px;
     padding: 5px 0;
+  }
+  .titleSection h3 {
+    font-size: 25px;
+  }
+  .titleSection p {
+    font-size: 13px;
   }
 }
 @media (max-width: 425px) {
