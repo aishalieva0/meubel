@@ -323,6 +323,23 @@
   }
 }
 @media (max-width: 980px) {
+  .arrivals {
+    .row {
+      .details {
+        span {
+          font-size: 20px;
+        }
+        h3 {
+          font-size: 36px;
+        }
+        a {
+          font-size: 18px;
+          width: 200px;
+          height: 50px;
+        }
+      }
+    }
+  }
   .social {
     height: 300px;
     .row {
@@ -458,6 +475,37 @@
     }
   }
 
+  .arrivals {
+    .row {
+      .arrivalImg {
+        width: 50%;
+      }
+      .details {
+        width: 50%;
+
+        span {
+          font-size: 18px;
+        }
+        h3 {
+          font-size: 30px;
+          margin-bottom: 15px;
+        }
+        a {
+          font-size: 16px;
+          width: 130px;
+          height: 40px;
+        }
+      }
+    }
+  }
+  .topPicks {
+    .row {
+      .content {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+
   .social {
     height: 180px;
     .row {
@@ -476,14 +524,6 @@
       }
     }
   }
-
-  .topPicks {
-    .row {
-      .content {
-        grid-template-columns: repeat(1, 1fr);
-      }
-    }
-  }
 }
 
 @media (max-width: 535px) {
@@ -495,6 +535,18 @@
           height: 250px;
           width: 400px;
         }
+      }
+    }
+  }
+  .arrivals {
+    .row {
+      flex-direction: column;
+      .arrivalImg {
+        width: 100%;
+      }
+      .details {
+        width: 100%;
+        margin-bottom: 20px;
       }
     }
   }
@@ -592,6 +644,25 @@
         .catImg {
           height: 150px;
           width: 250px;
+        }
+      }
+    }
+  }
+
+  .arrivals {
+    .row {
+      .details {
+        span {
+          font-size: 14px;
+        }
+        h3 {
+          font-size: 25px;
+          margin-bottom: 10px;
+        }
+        a {
+          font-size: 14px;
+          width: 110px;
+          height: 35px;
         }
       }
     }

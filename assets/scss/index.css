@@ -720,6 +720,17 @@ a {
   }
 }
 @media (max-width: 980px) {
+  .arrivals .row .details span {
+    font-size: 20px;
+  }
+  .arrivals .row .details h3 {
+    font-size: 36px;
+  }
+  .arrivals .row .details a {
+    font-size: 18px;
+    width: 200px;
+    height: 50px;
+  }
   .social {
     height: 300px;
   }
@@ -809,6 +820,27 @@ a {
   .categories .row .singleItem .details a {
     font-size: 16px;
   }
+  .arrivals .row .arrivalImg {
+    width: 50%;
+  }
+  .arrivals .row .details {
+    width: 50%;
+  }
+  .arrivals .row .details span {
+    font-size: 18px;
+  }
+  .arrivals .row .details h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  .arrivals .row .details a {
+    font-size: 16px;
+    width: 130px;
+    height: 40px;
+  }
+  .topPicks .row .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .social {
     height: 180px;
   }
@@ -823,9 +855,6 @@ a {
     width: 120px;
     font-size: 14px;
   }
-  .topPicks .row .content {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }
 @media (max-width: 535px) {
   .categories .row {
@@ -834,6 +863,16 @@ a {
   .categories .row .singleItem .catImg {
     height: 250px;
     width: 400px;
+  }
+  .arrivals .row {
+    flex-direction: column;
+  }
+  .arrivals .row .arrivalImg {
+    width: 100%;
+  }
+  .arrivals .row .details {
+    width: 100%;
+    margin-bottom: 20px;
   }
   .social {
     height: 140px;
@@ -899,6 +938,18 @@ a {
   .categories .row .singleItem .catImg {
     height: 150px;
     width: 250px;
+  }
+  .arrivals .row .details span {
+    font-size: 14px;
+  }
+  .arrivals .row .details h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  .arrivals .row .details a {
+    font-size: 14px;
+    width: 110px;
+    height: 35px;
   }
   .social {
     height: 100px;
