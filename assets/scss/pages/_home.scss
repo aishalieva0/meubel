@@ -36,7 +36,8 @@
   background: #faf4f4;
   padding: 50px 0;
   .row {
-    justify-content: space-between;
+    justify-content: center;
+    gap: 50px;
     .singleItem {
       .catImg {
         height: 300px;
@@ -323,6 +324,11 @@
   }
 }
 @media (max-width: 980px) {
+  .categories {
+    .row {
+      gap: 0;
+    }
+  }
   .arrivals {
     .row {
       .details {
