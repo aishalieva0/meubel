@@ -107,27 +107,34 @@
     font-size: 13px;
     text-align: center;
     .footerTop {
-      flex-direction: column;
       padding: 20px 0;
-
+      display: grid;
+      grid-template-areas:
+        "address address"
+        "links help"
+        "newsletter newsletter";
+      justify-content: center;
       .address {
         width: 100%;
         display: flex;
         justify-content: center;
+        grid-area: address;
       }
       h3 {
         margin-bottom: 5px;
       }
       .links {
-        width: 100%;
+        // width: 20%;
         margin-top: 15px;
+        grid-area: links;
         .linkList {
           gap: 2px;
         }
       }
       .help {
-        width: 100%;
+        // width: 50%;
         margin-top: 15px;
+        grid-area: help;
         .helpList {
           gap: 2px;
         }
@@ -135,7 +142,7 @@
 
       .newsletter {
         margin-top: 15px;
-
+        grid-area: newsletter;
         width: 100%;
         .newsletterForm {
           flex-direction: column;
