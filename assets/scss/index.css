@@ -514,6 +514,45 @@ a {
   font-weight: 600;
 }
 
+.arrivals {
+  background: #fff9e5;
+}
+.arrivals .row .arrivalImg {
+  width: 60%;
+}
+.arrivals .row .arrivalImg img {
+  max-width: 100%;
+}
+.arrivals .row .details {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.arrivals .row .details span {
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.arrivals .row .details h3 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.arrivals .row .details a {
+  text-transform: capitalize;
+  border: 1px solid #000;
+  font-family: Poppins;
+  font-size: 20px;
+  width: 255px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .blog {
   text-align: center;
   margin: 40px 0;
