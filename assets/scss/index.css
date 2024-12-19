@@ -67,11 +67,14 @@ a {
 }
 
 .header {
-  background: #fbebb5;
+  background: #fff;
   position: relative;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+.home .header {
+  background-color: #fbebb5;
 }
 .header .container .row {
   height: 100px;
@@ -972,6 +975,107 @@ a {
   }
   .social .row .content a {
     width: 100px;
+    font-size: 12px;
+  }
+}
+.heroBreadcrumb {
+  background-image: url(../img/ff74c027a1888544144abe4be6e02cbf.jpg);
+  height: 316px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.heroBreadcrumb::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+.heroBreadcrumb .row {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.heroBreadcrumb .row .content {
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.heroBreadcrumb .row .content .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heroBreadcrumb .row .content .logo img {
+  max-width: 100%;
+  width: 77px;
+  height: 77px;
+}
+.heroBreadcrumb .row .content h2 {
+  font-size: 48px;
+  font-weight: 500;
+}
+.heroBreadcrumb .row .content p {
+  font-weight: 300;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .heroBreadcrumb {
+    height: 250px;
+  }
+  .heroBreadcrumb .row .content {
+    line-height: 33px;
+  }
+  .heroBreadcrumb .row .content h2 {
+    font-size: 35px;
+  }
+  .heroBreadcrumb .row .content p {
+    gap: 6px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 425px) {
+  .heroBreadcrumb {
+    height: 180px;
+  }
+  .heroBreadcrumb .row .content {
+    line-height: 30px;
+  }
+  .heroBreadcrumb .row .content h2 {
+    font-size: 30px;
+  }
+  .heroBreadcrumb .row .content p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 320px) {
+  .heroBreadcrumb {
+    height: 140px;
+  }
+  .heroBreadcrumb .row .content {
+    line-height: 25px;
+  }
+  .heroBreadcrumb .row .content .logo img {
+    width: 66px;
+    height: 66px;
+  }
+  .heroBreadcrumb .row .content h2 {
+    font-size: 26px;
+    margin-top: -12px;
+  }
+  .heroBreadcrumb .row .content p {
     font-size: 12px;
   }
 }/*# sourceMappingURL=index.css.map */

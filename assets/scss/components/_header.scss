@@ -1,7 +1,10 @@
 .header {
-  background: #fbebb5;
+  background: #fff;
   position: relative;
   user-select: none;
+  .home & {
+    background-color: #fbebb5;
+  }
   .container {
     .row {
       height: 100px;
