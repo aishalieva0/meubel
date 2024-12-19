@@ -5,6 +5,10 @@ const searchBox = document.querySelector('.searchBox');
 const closeIcon = document.querySelector('#closeIcon');
 const searchIcon = document.querySelector('#searchIcon');
 const layout = document.querySelector('.layout');
+const shortBy = document.querySelector('#shortBy');
+const shortByDropdown = document.querySelector('.shortByDropdown');
+const dropdownItem = document.querySelectorAll('.dropdownList .dropdownItem');
+
 
 hamburger.addEventListener('click', () => {
     navBar.classList.toggle('open');
@@ -27,3 +31,14 @@ layout.addEventListener('click', () => {
     closeIcon.style.display = 'none'
     searchIcon.style.display = 'block'
 })
+
+shortBy.addEventListener('click', (e) => {
+    shortByDropdown.classList.toggle('open')
+})
+
+dropdownItem.forEach(item => {
+    item.addEventListener('click', () => {
+        shortByDropdown.classList.remove('open')
+        shortBy.textContent = item.textContent
+    })
+});

@@ -54,6 +54,176 @@
   }
 }
 
+.filter {
+  background: #faf4f4;
+  margin: 40px 0;
+  height: 100px;
+
+  align-items: center;
+  display: flex;
+
+  .row {
+    justify-content: space-between;
+    .left {
+      align-items: center;
+      display: flex;
+      gap: 40px;
+
+      .filterView {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+
+        .title {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        img {
+          max-width: 100%;
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+        }
+        span {
+          font-size: 20px;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: -20px;
+          top: -3px;
+          background: #9f9f9f;
+          height: 37px;
+          width: 2px;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 18px;
+
+      .show {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        input {
+          border: none;
+          outline: none;
+          width: 55px;
+          height: 55px;
+          text-align: center;
+          color: #9f9f9f;
+          font-size: 18px;
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+          }
+        }
+      }
+
+      .shortBy {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        position: relative;
+
+        #shortBy {
+          height: 50px;
+          width: 188px;
+          background: #fff;
+          align-items: center;
+          display: flex;
+          padding-left: 10px;
+          color: #9f9f9f;
+          cursor: pointer;
+        }
+        .shortByDropdown {
+          visibility: hidden;
+          opacity: 0;
+          height: 0;
+          position: absolute;
+          background: #fff;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+          right: 0;
+          top: 50px;
+          width: 188px;
+          z-index: 1;
+          transition: 0.2s ease-in-out;
+          .dropdownList {
+            .dropdownItem {
+              cursor: pointer;
+              padding: 5px 10px;
+              &:hover {
+                background: #fbebb5;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .filter {
+    height: 75px;
+    .row {
+      .left {
+        gap: 20px;
+        .filterView {
+          gap: 10px;
+
+          .title {
+            gap: 7px;
+          }
+          img {
+            width: 16px;
+            height: 16px;
+          }
+          span {
+            font-size: 15px;
+          }
+          &::after {
+            right: -10px;
+            top: -5px;
+            height: 34px;
+          }
+        }
+        p {
+          font-size: 13px;
+        }
+      }
+      .right {
+        font-size: 15px;
+        gap: 12px;
+        .show {
+          gap: 7px;
+          input {
+            font-size: 15px;
+            width: 40px;
+            height: 37px;
+          }
+        }
+        .shortBy {
+          #shortBy {
+            height: 37px;
+            width: 160px;
+          }
+          .shortByDropdown {
+            width: 160px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .heroBreadcrumb {
     height: 250px;
