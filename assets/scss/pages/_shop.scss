@@ -208,6 +208,27 @@
     }
   }
 }
+
+.banner {
+  background: #faf4f4;
+  height: 300px;
+  align-items: center;
+  display: flex;
+  .row {
+    gap: 38px;
+    justify-content: space-between;
+    .details {
+      h3 {
+        font-size: 30px;
+        font-weight: 500;
+      }
+      p {
+        font-size: 18px;
+        color: #9f9f9f;
+      }
+    }
+  }
+}
 @media (max-width: 1024px) {
   .filter {
     height: 75px;
@@ -260,6 +281,21 @@
       }
     }
   }
+
+  .banner {
+    height: 180px;
+    .row {
+      gap: 30px;
+      .details {
+        h3 {
+          font-size: 28px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -297,6 +333,22 @@
       }
     }
   }
+
+  .banner {
+    height: auto;
+    padding: 12px 0;
+    .row {
+      gap: 15px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      .details {
+        h3 {
+          font-size: 26px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 425px) {
@@ -312,6 +364,20 @@
 
         p {
           font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .banner {
+    .row {
+      gap: 12px;
+      .details {
+        h3 {
+          font-size: 22px;
+        }
+        p {
+          font-size: 14px;
         }
       }
     }
@@ -354,6 +420,20 @@
         }
         span:last-child {
           width: 70px;
+        }
+      }
+    }
+  }
+
+  .banner {
+    .row {
+      gap: 10px;
+      .details {
+        h3 {
+          font-size: 18px;
+        }
+        p {
+          font-size: 12px;
         }
       }
     }
