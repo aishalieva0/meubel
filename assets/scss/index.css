@@ -403,6 +403,28 @@ a {
     padding: 10px 0;
   }
 }
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card .cardImg {
+  width: 287px;
+  height: 287px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .cardImg img {
+  max-width: 100%;
+  width: 100%;
+}
+.card .details .price {
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .hero {
   background: #fbebb5;
   width: 100%;
@@ -506,27 +528,6 @@ a {
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-content: center;
-}
-.topPicks .row .content .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.topPicks .row .content .card .cardImg {
-  width: 287px;
-  height: 287px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.topPicks .row .content .card .cardImg img {
-  max-width: 100%;
-  width: 100%;
-}
-.topPicks .row .content .card .details .price {
-  font-size: 20px;
-  font-weight: 600;
 }
 
 .arrivals {
@@ -1141,6 +1142,41 @@ a {
   background: #fbebb5;
 }
 
+.products .row {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.products .row .content {
+  display: grid;
+  gap: 0;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.products .row .pagination {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 70px 0;
+  cursor: pointer;
+}
+.products .row .pagination span {
+  width: 50px;
+  height: 50px;
+  background: #fff9e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.products .row .pagination span:first-child {
+  background: #fbebb5;
+}
+.products .row .pagination span:last-child {
+  width: 90px;
+}
+
 @media (max-width: 1024px) {
   .filter {
     height: 75px;
@@ -1203,6 +1239,17 @@ a {
     gap: 6px;
     font-size: 14px;
   }
+  .products .row .pagination {
+    gap: 15px;
+    margin: 60px 0 35px;
+  }
+  .products .row .pagination span {
+    width: 40px;
+    height: 40px;
+  }
+  .products .row .pagination span:last-child {
+    width: 75px;
+  }
 }
 @media (max-width: 425px) {
   .heroBreadcrumb {
@@ -1235,5 +1282,17 @@ a {
   }
   .heroBreadcrumb .row .content p {
     font-size: 12px;
+  }
+  .products .row .pagination {
+    gap: 10px;
+    margin: 45px 0 25px;
+  }
+  .products .row .pagination span {
+    width: 35px;
+    height: 35px;
+    font-size: 13px;
+  }
+  .products .row .pagination span:last-child {
+    width: 70px;
   }
 }/*# sourceMappingURL=index.css.map */
