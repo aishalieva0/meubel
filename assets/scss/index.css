@@ -1270,6 +1270,31 @@ a {
     gap: 6px;
     font-size: 14px;
   }
+  .filter {
+    height: 70px;
+  }
+  .filter .row .left .filterView span {
+    font-size: 14px;
+  }
+  .filter .row .left .filterView::after {
+    display: none;
+  }
+  .filter .row .left p {
+    display: none;
+  }
+  .filter .row .right {
+    font-size: 14px;
+  }
+  .filter .row .right .show {
+    display: none;
+  }
+  .filter .row .right .shortBy #shortBy {
+    height: 32px;
+    width: 151px;
+  }
+  .filter .row .right .shortBy .shortByDropdown {
+    width: 151px;
+  }
   .products .row .pagination {
     gap: 15px;
     margin: 60px 0 35px;
@@ -1308,6 +1333,9 @@ a {
   .heroBreadcrumb .row .content p {
     font-size: 12px;
   }
+  .filter .row .left .filterView .title ~ img {
+    display: none;
+  }
   .banner .row {
     gap: 12px;
   }
@@ -1316,6 +1344,30 @@ a {
   }
   .banner .row .details p {
     font-size: 14px;
+  }
+}
+@media (max-width: 375px) {
+  .filter {
+    height: 50px;
+  }
+  .filter .row .left .filterView span {
+    display: none;
+  }
+  .filter .row .left .filterView .title ~ img {
+    display: none;
+  }
+  .filter .row .right {
+    font-size: 12px;
+  }
+  .filter .row .right .shortBy {
+    gap: 5px;
+  }
+  .filter .row .right .shortBy #shortBy {
+    height: 30px;
+    width: 132px;
+  }
+  .filter .row .right .shortBy .shortByDropdown {
+    width: 132px;
   }
 }
 @media (max-width: 320px) {
