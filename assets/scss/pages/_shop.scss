@@ -58,7 +58,6 @@
   background: #faf4f4;
   margin: 40px 0;
   height: 100px;
-
   align-items: center;
   display: flex;
 
@@ -120,11 +119,6 @@
           text-align: center;
           color: #9f9f9f;
           font-size: 18px;
-
-          &::-webkit-outer-spin-button,
-          &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-          }
         }
       }
 

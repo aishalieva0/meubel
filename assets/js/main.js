@@ -8,7 +8,7 @@ const layout = document.querySelector('.layout');
 const shortBy = document.querySelector('#shortBy');
 const shortByDropdown = document.querySelector('.shortByDropdown');
 const dropdownItem = document.querySelectorAll('.dropdownList .dropdownItem');
-
+const { pathname } = window.location;
 
 hamburger.addEventListener('click', () => {
     navBar.classList.toggle('open');
@@ -32,13 +32,15 @@ layout.addEventListener('click', () => {
     searchIcon.style.display = 'block'
 })
 
-shortBy.addEventListener('click', (e) => {
-    shortByDropdown.classList.toggle('open')
-})
-
-dropdownItem.forEach(item => {
-    item.addEventListener('click', () => {
-        shortByDropdown.classList.remove('open')
-        shortBy.textContent = item.textContent
+if (pathname.includes('shop')) {
+    shortBy.addEventListener('click', (e) => {
+        shortByDropdown.classList.toggle('open')
     })
-});
+
+    dropdownItem.forEach(item => {
+        item.addEventListener('click', () => {
+            shortByDropdown.classList.remove('open')
+            shortBy.textContent = item.textContent
+        })
+    });
+}
