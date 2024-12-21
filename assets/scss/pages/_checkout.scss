@@ -54,6 +54,7 @@
             .checkoutItem {
               display: flex;
               justify-content: space-between;
+              align-items: center;
 
               h3 {
                 font-size: 24px;
@@ -101,6 +102,7 @@
             gap: 15px;
             .paymentItem {
               label {
+                grid-area: label;
                 font-weight: 500;
                 color: #9f9f9f;
               }
@@ -118,6 +120,7 @@
                 color: #9f9f9f;
                 display: none;
               }
+
               input:checked ~ p {
                 display: block;
               }
@@ -144,6 +147,215 @@
               height: 60px;
               background: transparent;
               cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .checkout {
+    .container {
+      .formCheckout {
+        .left {
+          gap: 15px;
+          width: 45%;
+
+          h2 {
+            font-size: 32px;
+          }
+          .row {
+            gap: 15px;
+            flex-direction: column;
+            .inputGroup {
+              width: 100%;
+            }
+          }
+        }
+        .right {
+          width: 45%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout {
+    margin-bottom: 0;
+    .container {
+      .formCheckout {
+        flex-direction: column;
+        .left {
+          width: 100%;
+
+          h2 {
+            font-size: 28px;
+          }
+
+          input,
+          select,
+          textarea {
+            height: 40px;
+          }
+          label {
+            font-size: 14px;
+          }
+          textarea {
+            padding: 9px 0 9px 20px;
+          }
+        }
+        .right {
+          width: 100%;
+
+          .checkoutDetails {
+            padding: 25px 0;
+
+            .checkoutList {
+              gap: 15px;
+              .checkoutItem {
+                h3 {
+                  font-size: 20px;
+                }
+
+                .cartList {
+                  .cartItem {
+                    .cartDetail {
+                      gap: 10px;
+                    }
+                  }
+                }
+
+                h4,
+                span {
+                  font-size: 14px;
+                }
+
+                .total {
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+
+          .paymentDetails {
+            padding: 25px 0;
+            .paymentList {
+              gap: 10px;
+              .paymentItem {
+                label {
+                  font-size: 14px;
+                }
+                p {
+                  margin-top: 8px;
+                  font-size: 14px;
+                }
+              }
+            }
+
+            p {
+              margin-top: 15px;
+              font-size: 14px;
+            }
+            .submitBtn {
+              margin: 30px 0;
+              button {
+                font-size: 16px;
+                width: 150px;
+                height: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .checkout {
+    .container {
+      .formCheckout {
+        .left {
+          h2 {
+            font-size: 22px;
+          }
+
+          input,
+          select,
+          textarea {
+            height: 32px;
+          }
+          label,
+          input,
+          textarea,
+          select {
+            font-size: 12px;
+          }
+          textarea {
+            padding: 6px 0 6px 20px;
+          }
+        }
+        .right {
+          .checkoutDetails {
+            padding: 15px 0;
+            .checkoutList {
+              gap: 8px;
+              .checkoutItem {
+                h3 {
+                  font-size: 18px;
+                }
+
+                .cartList {
+                  .cartItem {
+                    .cartDetail {
+                      gap: 8px;
+                    }
+                  }
+                }
+                h4,
+                span {
+                  font-size: 12px;
+                }
+                .total {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+
+          .paymentDetails {
+            padding: 15px 0;
+            .paymentList {
+              gap: 5px;
+              .paymentItem {
+                label {
+                  font-size: 12px;
+                }
+                input[type="radio"] {
+                  height: 12px;
+                  margin-right: 6px;
+                }
+                p {
+                  margin-top: 5px;
+                  font-size: 12px;
+                }
+              }
+            }
+
+            p {
+              margin-top: 12px;
+              font-size: 12px;
+            }
+            .submitBtn {
+              margin: 10px 0;
+              button {
+                font-size: 13px;
+                width: 120px;
+                height: 35px;
+              }
             }
           }
         }
