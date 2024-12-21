@@ -1708,4 +1708,145 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     width: 85px;
     height: 30px;
   }
+}
+.checkout {
+  margin: 40px 0;
+}
+.checkout .container {
+  width: 78%;
+}
+.checkout .container .formCheckout {
+  display: flex;
+  justify-content: space-between;
+}
+.checkout .container .formCheckout .left {
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.checkout .container .formCheckout .left h2 {
+  font-size: 36px;
+  font-weight: 600;
+}
+.checkout .container .formCheckout .left .row {
+  gap: 20px;
+}
+.checkout .container .formCheckout .left .row .inputGroup {
+  width: 50%;
+}
+.checkout .container .formCheckout .left .inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.checkout .container .formCheckout .left input,
+.checkout .container .formCheckout .left select,
+.checkout .container .formCheckout .left textarea {
+  border: 1px solid #9f9f9f;
+  border-radius: 10px;
+  height: 50px;
+  resize: none;
+  padding: 0 20px;
+  outline: none;
+}
+.checkout .container .formCheckout .left textarea {
+  padding: 13px 0 13px 20px;
+}
+.checkout .container .formCheckout .right {
+  width: 50%;
+}
+.checkout .container .formCheckout .right .checkoutDetails {
+  padding: 40px 0;
+  border-bottom: 1px solid #d9d9d9;
+}
+.checkout .container .formCheckout .right .checkoutDetails .checkoutList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.checkout .container .formCheckout .right .checkoutDetails .checkoutList .checkoutItem {
+  display: flex;
+  justify-content: space-between;
+}
+.checkout .container .formCheckout .right .checkoutDetails .checkoutList .checkoutItem h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.checkout .container .formCheckout .right .checkoutDetails .checkoutList .checkoutItem .cartList {
+  width: 100%;
+}
+.checkout .container .formCheckout .right .checkoutDetails .checkoutList .checkoutItem .cartList .cartItem {
+  display: flex;
+  justify-content: space-between;
+}
+.checkout .container .formCheckout .right .checkoutDetails .checkoutList .checkoutItem .cartList .cartItem .cartDetail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.checkout .container .formCheckout .right .checkoutDetails .checkoutList .checkoutItem .cartList .cartItem .cartDetail h4 {
+  color: #9f9f9f;
+}
+.checkout .container .formCheckout .right .checkoutDetails .checkoutList .checkoutItem .cartList .cartItem .cartDetail span {
+  font-size: 12px;
+  font-weight: 500;
+}
+.checkout .container .formCheckout .right .checkoutDetails .checkoutList .checkoutItem h4 {
+  font-weight: 400;
+}
+.checkout .container .formCheckout .right .checkoutDetails .checkoutList .checkoutItem .total {
+  font-size: 24px;
+  font-weight: 700;
+  color: #b88e2f;
+}
+.checkout .container .formCheckout .right .paymentDetails {
+  padding: 40px 0;
+}
+.checkout .container .formCheckout .right .paymentDetails .paymentList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.checkout .container .formCheckout .right .paymentDetails .paymentList .paymentItem label {
+  font-weight: 500;
+  color: #9f9f9f;
+}
+.checkout .container .formCheckout .right .paymentDetails .paymentList .paymentItem input[type=radio] {
+  accent-color: #000;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.checkout .container .formCheckout .right .paymentDetails .paymentList .paymentItem input:checked ~ label {
+  color: #000;
+}
+.checkout .container .formCheckout .right .paymentDetails .paymentList .paymentItem p {
+  margin-top: 10px;
+  color: #9f9f9f;
+  display: none;
+}
+.checkout .container .formCheckout .right .paymentDetails .paymentList .paymentItem input:checked ~ p {
+  display: block;
+}
+.checkout .container .formCheckout .right .paymentDetails p {
+  font-weight: 300;
+  margin-top: 20px;
+}
+.checkout .container .formCheckout .right .paymentDetails p a {
+  font-weight: 600;
+  cursor: pointer;
+}
+.checkout .container .formCheckout .right .paymentDetails .submitBtn {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+.checkout .container .formCheckout .right .paymentDetails .submitBtn button {
+  font-size: 20px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  width: 220px;
+  height: 60px;
+  background: transparent;
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */

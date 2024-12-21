@@ -1,0 +1,153 @@
+.checkout {
+  margin: 40px 0;
+  .container {
+    width: 78%;
+    .formCheckout {
+      display: flex;
+      justify-content: space-between;
+      .left {
+        width: 42%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h2 {
+          font-size: 36px;
+          font-weight: 600;
+        }
+        .row {
+          gap: 20px;
+          .inputGroup {
+            width: 50%;
+          }
+        }
+        .inputGroup {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+        input,
+        select,
+        textarea {
+          border: 1px solid #9f9f9f;
+          border-radius: 10px;
+          height: 50px;
+          resize: none;
+          padding: 0 20px;
+          outline: none;
+        }
+        textarea {
+          padding: 13px 0 13px 20px;
+        }
+      }
+
+      .right {
+        width: 50%;
+
+        .checkoutDetails {
+          padding: 40px 0;
+          border-bottom: 1px solid #d9d9d9;
+          .checkoutList {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .checkoutItem {
+              display: flex;
+              justify-content: space-between;
+
+              h3 {
+                font-size: 24px;
+                font-weight: 500;
+              }
+
+              .cartList {
+                width: 100%;
+                .cartItem {
+                  display: flex;
+                  justify-content: space-between;
+                  .cartDetail {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    h4 {
+                      color: #9f9f9f;
+                    }
+                    span {
+                      font-size: 12px;
+                      font-weight: 500;
+                    }
+                  }
+                }
+              }
+
+              h4 {
+                font-weight: 400;
+              }
+
+              .total {
+                font-size: 24px;
+                font-weight: 700;
+                color: #b88e2f;
+              }
+            }
+          }
+        }
+
+        .paymentDetails {
+          padding: 40px 0;
+          .paymentList {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .paymentItem {
+              label {
+                font-weight: 500;
+                color: #9f9f9f;
+              }
+              input[type="radio"] {
+                accent-color: #000;
+                margin-right: 12px;
+                cursor: pointer;
+              }
+
+              input:checked ~ label {
+                color: #000;
+              }
+              p {
+                margin-top: 10px;
+                color: #9f9f9f;
+                display: none;
+              }
+              input:checked ~ p {
+                display: block;
+              }
+            }
+          }
+
+          p {
+            font-weight: 300;
+            margin-top: 20px;
+            a {
+              font-weight: 600;
+              cursor: pointer;
+            }
+          }
+          .submitBtn {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            button {
+              font-size: 20px;
+              border: 1px solid #000;
+              border-radius: 15px;
+              width: 220px;
+              height: 60px;
+              background: transparent;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
