@@ -59,13 +59,31 @@
                         </li>
                         <li class="userAreaItem">
                             <a href="#">
-                                <img src="../assets/img/icons/ant-design_shopping-cart-outlined.png" alt="cart">
+                                <img src="../assets/img/icons/ant-design_shopping-cart-outlined.png" alt="cart"
+                                    id="cartBtn">
                             </a>
                         </li>
                     </ul>
                     <div class="searchBox">
                         <img src="../assets/img/icons/akar-icons_search.png" alt="search">
                         <input type="text" name="search" id="search" placeholder="Search..">
+                    </div>
+                    <div class="cartBox" id="dropdownCart">
+                        <div class="title">
+                            <h3>Shopping Cart</h3>
+                            <img src="../assets/img/icons/close-cart.png" alt="close-cart" id="closeCartBoxBtn">
+                        </div>
+                        <div class="cartContent">
+                            <ul class="cartList" id="cartBox"></ul>
+                            <div class="totalPrice">
+                                <h4>Subtotal</h4>
+                                <span class="total">0</span>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <a href="./cart.html">View Cart</a>
+                            <a href="./checkout.html">Checkout</a>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -104,7 +122,7 @@
                             <h3>Subtotal</h3>
                         </div>
                         <div class="cartProducts">
-                            <ul class="cartList">
+                            <ul class="cartList" id="cartPage">
                                 <li class="cartItem">
                                     <div class="productImg">
                                         <img src="../assets/img/Asgaard sofa 2.png" alt="sofa">
@@ -118,7 +136,6 @@
                                     <img class="delete" src="../assets/img/icons/ant-design_delete-filled.png"
                                         alt="delete">
                                 </li>
-
                             </ul>
                         </div>
                     </div>

@@ -59,13 +59,31 @@
                         </li>
                         <li class="userAreaItem">
                             <a href="#">
-                                <img src="./assets/img/icons/ant-design_shopping-cart-outlined.png" alt="cart">
+                                <img src="./assets/img/icons/ant-design_shopping-cart-outlined.png" id="cartBtn"
+                                    alt="cart">
                             </a>
                         </li>
                     </ul>
                     <div class="searchBox">
                         <img src="./assets/img/icons/akar-icons_search.png" alt="search">
                         <input type="text" name="search" id="search" placeholder="Search..">
+                    </div>
+                    <div class="cartBox" id="dropdownCart">
+                        <div class="title">
+                            <h3>Shopping Cart</h3>
+                            <img src="./assets/img/icons/close-cart.png" alt="close-cart" id="closeCartBoxBtn">
+                        </div>
+                        <div class="cartContent">
+                            <ul class="cartList" id="cartBox"></ul>
+                            <div class="totalPrice">
+                                <h4>Subtotal</h4>
+                                <span class="total">0</span>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <a href="./pages/cart.html">View Cart</a>
+                            <a href="./pages/checkout.html">Checkout</a>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -361,6 +379,7 @@
 
     <!-- Custom JavaScript -->
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/cart.js"></script>
 </body>
 
 </html>

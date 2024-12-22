@@ -1,10 +1,14 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-const cartList = document.querySelector('.cartList');
+const cartCheckout = document.querySelector('#cartCheckout');
+const cartPage = document.querySelector('#cartPage');
 const total = document.querySelector('.total');
+const cartBox = document.querySelector('#cartBox');
+const dropdownCart = document.querySelector('#dropdownCart');
+const cartBtn = document.querySelector('#cartBtn');
 function displayCartPage() {
-    cartList.innerHTML = '';
+    cartPage.innerHTML = '';
     cart.map(product => {
-        cartList.innerHTML +=
+        cartPage.innerHTML +=
             `<li class="cartItem">
             <div class="productImg">
                 <img src="${product.image}" alt="${product.title}">
@@ -23,7 +27,7 @@ function displayCartPage() {
 }
 if (window.location.pathname.includes('cart')) {
     displayCartPage()
-} else {
+} else if (window.location.pathname.includes('checkout')) {
     displayCheckout()
 }
 
@@ -32,7 +36,10 @@ function removeItem(id, color, size) {
         !(item.id === id && item.color === color && item.size === size)
     )
     localStorage.setItem('cart', JSON.stringify(cart));
-    displayCartPage()
+    if (window.location.pathname.includes('cart')) {
+        displayCartPage()
+    }
+    displayCartBox()
 }
 
 function calculateTotalCart() {
@@ -44,9 +51,9 @@ function calculateTotalCart() {
 }
 
 function displayCheckout() {
-    cartList.innerHTML = '';
+    cartCheckout.innerHTML = '';
     cart.map(product => {
-        cartList.innerHTML +=
+        cartCheckout.innerHTML +=
             `<li class="cartItem">
                 <div class="cartDetail">
                     <h4>${product.title}</h4>
@@ -58,3 +65,48 @@ function displayCheckout() {
     })
     calculateTotalCart();
 }
+
+function displayCartBox() {
+    cartBox.innerHTML = '';
+    if (cart.length > 0) {
+        cart.map(product => {
+            cartBox.innerHTML +=
+                `<li class="cartItem">
+            <div class="productImg">
+                <img src="${product.image}" alt="${product.title}">
+            </div>
+            <div class="info">
+                <h4>${product.title}</h4>
+                <div class="details">
+                    <span class="quantity">${product.quantity}</span>
+                    <span>x</span>
+                    <span class="price">${(product.price * product.quantity).toFixed(2)}$</span>
+                </div>
+            </div>
+            <div class="removeBtn" onclick="removeItem(${product.id}, '${product.color}', '${product.size}')">
+                <img src="./assets/img/icons/delete.png" alt="delete">
+            </div>
+        </li>`
+        })
+        calculateTotalCart()
+    } else {
+        dropdownCart.innerHTML = `
+        <div class="title">
+            <h3>Shopping Cart</h3>
+            <img src="./assets/img/icons/close-cart.png" alt="close-cart" id="closeCartBoxBtn">
+        </div>
+        <div class="empty"><p>Cart is empty</p></div>`
+    }
+    const closeCartBoxBtn = document.querySelector('#closeCartBoxBtn');
+    closeCartBoxBtn.addEventListener('click', () => {
+        dropdownCart.classList.remove('activeFlex')
+    })
+}
+
+displayCartBox()
+
+cartBtn.addEventListener('click', () => {
+    dropdownCart.classList.add('activeFlex')
+})
+
+
