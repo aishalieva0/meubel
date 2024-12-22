@@ -1,7 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 const singleProduct = document.querySelector('#singleProduct');
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let cartData = JSON.parse(localStorage.getItem('cart')) || [];
 
 async function getProductById(productId) {
     const products = await window.getProducts();
@@ -167,7 +167,7 @@ async function addToCart(id) {
     const quantityElement = document.getElementById('quantity');
     const selectedQuantity = parseInt(quantityElement.innerText);
 
-    const cartItem = cart.find(item =>
+    const cartItem = cartData.find(item =>
         item.id === product.id &&
         item.size === selectedSize &&
         item.color === selectedColor
@@ -176,14 +176,14 @@ async function addToCart(id) {
     if (cartItem) {
         cartItem.quantity += selectedQuantity;
     } else {
-        cart.push({
+        cartData.push({
             ...product,
             size: selectedSize,
             color: selectedColor,
             quantity: selectedQuantity,
         });
     }
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem('cart', JSON.stringify(cartData));
 
 }
 

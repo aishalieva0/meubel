@@ -3,8 +3,10 @@ const cartCheckout = document.querySelector('#cartCheckout');
 const cartPage = document.querySelector('#cartPage');
 const total = document.querySelector('.total');
 const cartBox = document.querySelector('#cartBox');
+const cartContent = document.querySelector('#cartContent');
 const dropdownCart = document.querySelector('#dropdownCart');
 const cartBtn = document.querySelector('#cartBtn');
+const bottom = document.querySelector('.bottom');
 function displayCartPage() {
     cartPage.innerHTML = '';
     cart.map(product => {
@@ -84,23 +86,16 @@ function displayCartBox() {
                 </div>
             </div>
             <div class="removeBtn" onclick="removeItem(${product.id}, '${product.color}', '${product.size}')">
-                <img src="./assets/img/icons/delete.png" alt="delete">
+                <img src="/assets/img/icons/delete.png" alt="delete">
             </div>
         </li>`
         })
         calculateTotalCart()
     } else {
-        dropdownCart.innerHTML = `
-        <div class="title">
-            <h3>Shopping Cart</h3>
-            <img src="./assets/img/icons/close-cart.png" alt="close-cart" id="closeCartBoxBtn">
-        </div>
-        <div class="empty"><p>Cart is empty</p></div>`
+        cartContent.innerHTML = `
+        <div class="empty"><p>Cart is empty</p></div>`;
+        bottom.style.display = 'none'
     }
-    const closeCartBoxBtn = document.querySelector('#closeCartBoxBtn');
-    closeCartBoxBtn.addEventListener('click', () => {
-        dropdownCart.classList.remove('activeFlex')
-    })
 }
 
 displayCartBox()
@@ -108,5 +103,8 @@ displayCartBox()
 cartBtn.addEventListener('click', () => {
     dropdownCart.classList.add('activeFlex')
 })
-
+const closeCartBoxBtn = document.querySelector('#closeCartBoxBtn');
+closeCartBoxBtn.addEventListener('click', () => {
+    dropdownCart.classList.remove('activeFlex')
+})
 

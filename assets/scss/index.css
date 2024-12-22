@@ -226,10 +226,15 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   justify-content: space-between;
   height: 100%;
 }
+.header .container .row .navBar .cartBox .cartContent .cartList {
+  max-height: 250px; /* Adjust the height based on your design */
+  overflow-y: auto;
+}
 .header .container .row .navBar .cartBox .cartContent .cartList .cartItem {
   display: flex;
   align-items: center;
   gap: 23px;
+  margin-bottom: 10px;
 }
 .header .container .row .navBar .cartBox .cartContent .cartList .cartItem .productImg {
   background: #fbebb5;
@@ -241,7 +246,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   height: 85px;
 }
 .header .container .row .navBar .cartBox .cartContent .cartList .cartItem .info {
-  width: 55%;
+  width: 50%;
 }
 .header .container .row .navBar .cartBox .cartContent .cartList .cartItem .info .details {
   display: flex;
@@ -261,6 +266,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .header .container .row .navBar .cartBox .cartContent .totalPrice {
   display: flex;
   align-items: center;
+  padding-top: 10px;
 }
 .header .container .row .navBar .cartBox .cartContent .totalPrice h4 {
   width: 60%;

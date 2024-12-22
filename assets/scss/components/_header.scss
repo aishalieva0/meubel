@@ -152,11 +152,15 @@
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
+
             .cartList {
+              max-height: 250px; /* Adjust the height based on your design */
+              overflow-y: auto;
               .cartItem {
                 display: flex;
                 align-items: center;
                 gap: 23px;
+                margin-bottom: 10px;
                 .productImg {
                   background: #fbebb5;
                   border-radius: 10px;
@@ -167,7 +171,7 @@
                   }
                 }
                 .info {
-                  width: 55%;
+                  width: 50%;
                   .details {
                     display: flex;
                     align-items: center;
@@ -190,6 +194,7 @@
             .totalPrice {
               display: flex;
               align-items: center;
+              padding-top: 10px;
               h4 {
                 width: 60%;
               }
@@ -216,7 +221,7 @@
             }
           }
 
-          .empty{
+          .empty {
             display: flex;
             align-items: center;
             justify-content: center;
