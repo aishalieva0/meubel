@@ -1436,9 +1436,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .cart .row .cartDetails .cartProducts .cartList .cartItem {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
   align-items: center;
-  gap: 20px;
+  color: rgb(35, 95, 33);
 }
 .cart .row .cartDetails .cartProducts .cartList .cartItem .productImg {
   width: 106px;
@@ -1458,6 +1458,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .cart .row .cartDetails .cartProducts .cartList .cartItem .price {
   color: #9f9f9f;
+}
+.cart .row .cartDetails .cartProducts .cartList .cartItem .color {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
 }
 .cart .row .cartDetails .cartProducts .cartList .cartItem .quantity {
   border: 1px solid #9f9f9f;

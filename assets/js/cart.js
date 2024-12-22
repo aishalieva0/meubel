@@ -10,13 +10,22 @@ function displayCartPage() {
             </div>
             <h4>${product.title}</h4>
             <span class="price">${product.price}$</span>
+            <span class="color" style="background:${product.color}"></span>
+            <span class="size">${product.size}</span>
             <input class="quantity" type="number" value="${product.quantity}">
                 <span class="subTotal">${product.price * product.quantity}$</span>
                 <img class="delete" src="../assets/img/icons/ant-design_delete-filled.png"
-                    alt="delete">
+                    alt="delete" onclick="removeItem(${product.id}, '${product.color}', '${product.size}')">
         </li> `
     })
 }
 
 displayCartPage()
 
+function removeItem(id, color, size) {
+    cart = cart.filter(item =>
+        !(item.id === id && item.color === color && item.size === size)
+    )
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCartPage()
+}
