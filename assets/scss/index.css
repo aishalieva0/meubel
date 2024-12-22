@@ -1484,7 +1484,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   align-items: center;
   text-align: center;
   width: 30%;
-  height: 390px;
+  height: 300px;
 }
 .cart .row .cartTotals h2 {
   font-size: 32px;
@@ -1494,16 +1494,14 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .cart .row .cartTotals .totalPrices {
   display: flex;
+  align-items: center;
   margin-bottom: 35px;
   gap: 40px;
 }
 .cart .row .cartTotals .totalPrices h3 {
   font-weight: 500;
 }
-.cart .row .cartTotals .totalPrices:nth-of-type(1) span {
-  color: #9f9f9f;
-}
-.cart .row .cartTotals .totalPrices:nth-of-type(2) span {
+.cart .row .cartTotals .totalPrices span {
   color: #b88e2f;
 }
 .cart .row .cartTotals a {

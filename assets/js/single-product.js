@@ -15,7 +15,7 @@ async function displaySingleProduct() {
             `<div class="breadcrumb">
     <a href="../index.html">Home</a>
     <i class="fa-solid fa-angle-right"></i>
-    <a href="../index.html">Shop</a>
+    <a href="./shop.html">Shop</a>
     <i class="fa-solid fa-angle-right"></i>
     <p>${product.title}</p>
     </div>

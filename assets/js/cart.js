@@ -1,5 +1,7 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cartList = document.querySelector('.cartList');
+const total = document.querySelector('#total');
+
 function displayCartPage() {
     cartList.innerHTML = '';
     cart.map(product => {
@@ -13,11 +15,12 @@ function displayCartPage() {
             <span class="color" style="background:${product.color}"></span>
             <span class="size">${product.size}</span>
             <input class="quantity" type="number" value="${product.quantity}">
-                <span class="subTotal">${product.price * product.quantity}$</span>
+                <span class="subTotal">${(product.price * product.quantity).toFixed(2)}$</span>
                 <img class="delete" src="../assets/img/icons/ant-design_delete-filled.png"
                     alt="delete" onclick="removeItem(${product.id}, '${product.color}', '${product.size}')">
         </li> `
     })
+    calculateTotalCart();
 }
 
 displayCartPage()
@@ -28,4 +31,12 @@ function removeItem(id, color, size) {
     )
     localStorage.setItem('cart', JSON.stringify(cart));
     displayCartPage()
+}
+
+function calculateTotalCart() {
+    let totalSum = 0;
+    cart.forEach(item => {
+        totalSum += item.price * item.quantity;
+    });
+    total.textContent = `${totalSum.toFixed(2)}$`;
 }
