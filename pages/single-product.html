@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/scss/index.css">
+    <title>Meubel | Product</title>
+</head>
+
+<body>
+    <!-- Header start -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <!-- Navbar -->
+                <nav class="navBar" id="navBar">
+                    <ul class="navList" id="navList">
+                        <li class="navItem">
+                            <a href="../index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li class="navItem">
+                            <a href="./shop.html">
+                                Shop
+                            </a>
+                        </li>
+                        <li class="navItem">
+                            <a href="#">
+                                About
+                            </a>
+                        </li>
+                        <li class="navItem">
+                            <a href="#">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="userAreaList" id="userAreaList">
+                        <li class="userAreaItem">
+                            <a href="#">
+                                <img src="../assets/img/icons/mdi_account-alert-outline.png" alt="user">
+                            </a>
+                        </li>
+                        <li class="userAreaItem" id="searchBtn">
+                            <i class="fa-solid fa-x" id="closeIcon"></i>
+                            <img src="../assets/img/icons/akar-icons_search.png" id="searchIcon" alt="search">
+                        </li>
+                        <li class="userAreaItem">
+                            <a href="#">
+                                <img src="../assets/img/icons/akar-icons_heart.png" alt="heart">
+                            </a>
+                        </li>
+                        <li class="userAreaItem">
+                            <a href="#">
+                                <img src="../assets/img/icons/ant-design_shopping-cart-outlined.png" alt="cart">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="searchBox">
+                        <img src="../assets/img/icons/akar-icons_search.png" alt="search">
+                        <input type="text" name="search" id="search" placeholder="Search..">
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <main class="main">
+        <div class="layout"></div>
+
+        <div class="singleProduct">
+            <div class="container">
+                <div class="productInfo" id="singleProduct">
+                    <div class="breadcrumb">
+                        <a href="../index.html">Home</a>
+                        <i class="fa-solid fa-angle-right"></i>
+                        <a href="../index.html">Shop</a>
+                        <i class="fa-solid fa-angle-right"></i>
+                        <p>asgaard sofa</p>
+                    </div>
+                    <div class="content">
+                        <div class="productImg">
+                            <img src="../assets/img/Asgaard sofa 2.png" alt="">
+                        </div>
+                        <div class="productDetails">
+                            <h2>asgaard sofa</h2>
+                            <p class="price"><span>250</span>$</p>
+                            <div class="feedback">
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="review">
+                                    <p><span>5</span>Customer review</p>
+                                </div>
+                            </div>
+
+                            <p class="desc">
+                                Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact,
+                                stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended
+                                highs for a sound.
+                            </p>
+
+                            <p>Size</p>
+                            <div class="sizeSelect">
+                                <button class="sizeOption">S</button>
+                                <button class="sizeOption">M</button>
+                                <button class="sizeOption">XL</button>
+                            </div>
+                            <p>Color</p>
+                            <div class="colorSelect">
+                                <button class="colorOption">White</button>
+                                <button class="colorOption">Black</button>
+                                <button class="colorOption">Red</button>
+                            </div>
+                            <div class="row">
+                                <div class="quantitySelect">
+                                    <span id="minus">-</span>
+                                    <span id="quantity">1</span>
+                                    <span id="plus">+</span>
+                                </div>
+                                <button class="addToCartBtn">Add to Cart</button>
+                            </div>
+
+                            <div class="info">
+                                <ul class="detailList">
+                                    <li class="detailItem">
+                                        <span class="title">SKU</span>
+                                        <span>SS001</span>
+                                    </li>
+                                    <li class="detailItem">
+                                        <span class="title">Category</span>
+                                        <span>Sofas</span>
+                                    </li>
+                                    <li class="detailItem">
+                                        <span class="title">Tags</span>
+                                        <span>Sofa, Chair, Home, Shop</span>
+                                    </li>
+                                    <li class="detailItem">
+                                        <span class="title">Share</span>
+                                        <div class="socialMedia">
+                                            <a href="https://www.facebook.com" target="_blank">
+                                                <img src="../assets/img/icons/akar-icons_facebook-fill.png"
+                                                    alt="facebook">
+                                            </a>
+                                            <a href="https://www.linkedin.com" target="_blank">
+                                                <img src="../assets/img/icons/akar-icons_linkedin-box-fill.png"
+                                                    alt="linkedin">
+                                            </a>
+                                            <a href="https://www.twitter.com" target="_blank">
+                                                <img src="../assets/img/icons/ant-design_twitter-circle-filled.png"
+                                                    alt="twitter">
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="wishlist">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <!-- Footer start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footerTop">
+                <div class="address">
+                    <a href="https://maps.app.goo.gl/4W8K7ugzJKTgpvrs9" target="_blank">
+                        400 University Drive Suite 200 Coral Gables,
+                        FL 33134 USA
+                    </a>
+                </div>
+                <div class="links">
+                    <h3>Links</h3>
+                    <ul class="linkList">
+                        <li class="linkItem">
+                            <a href="./index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li class="linkItem">
+                            <a href="./pages/shop.html">
+                                Shop
+                            </a>
+                        </li>
+                        <li class="linkItem">
+                            <a href="#">
+                                About
+                            </a>
+                        </li>
+                        <li class="linkItem">
+                            <a href="#">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="help">
+                    <h3>Help</h3>
+                    <ul class="helpList">
+                        <li class="helpItem">
+                            <a href="#" target="_blank">
+                                Payment Options
+                            </a>
+                        </li>
+                        <li class="helpItem">
+                            <a href="#" target="_blank">
+                                Returns
+                            </a>
+                        </li>
+                        <li class="helpItem">
+                            <a href="#" target="_blank">
+                                Privacy Policies
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newsletter">
+                    <h3>Newsletter</h3>
+                    <form class="newsletterForm">
+                        <input type="email" name="email" id="email" placeholder="Enter Your Email Address" required>
+                        <button>SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footerBottom">
+                <p>2022 Meubel House. All rights reverved</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/5572bb5cab.js" crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/single-product.js"></script>
+</body>
+
+</html>

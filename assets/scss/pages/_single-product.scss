@@ -1,0 +1,102 @@
+.singleProduct {
+  .productInfo {
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+    }
+
+    .content {
+      display: flex;
+
+      .productImg {
+        width: 50%;
+      }
+
+      .productDetails {
+        width: 50%;
+
+        .feedback {
+          display: flex;
+        }
+        .colorSelect {
+          display: flex;
+          gap: 10px;
+          .colorOption {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            // border: 2px solid red;
+            cursor: pointer;
+          }
+        }
+
+        .row {
+          .quantitySelect {
+            width: 123px;
+            height: 64px;
+            border: 1px solid #9f9f9f;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            #minus,
+            #plus {
+              cursor: pointer;
+              font-size: 20px;
+            }
+          }
+
+          .addToCartBtn {
+            width: 215px;
+            height: 64px;
+            border: 1px solid #000;
+            border-radius: 15px;
+            background: transparent;
+            cursor: pointer;
+          }
+        }
+
+        .info {
+          display: flex;
+          gap: 20px;
+          .detailList {
+            width: 100%;
+            .detailItem {
+              display: flex;
+              .title {
+                display: flex;
+                justify-content: space-between;
+                width: 20%;
+                &::after {
+                  content: ":";
+                  color: #9f9f9f;
+                  margin-right: 10px;
+                }
+              }
+              .socialMedia {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                img {
+                  max-width: 100%;
+                  width: 20px;
+                  height: 20px;
+                }
+              }
+            }
+          }
+          .wishlist {
+            i {
+              color: red;
+              cursor: pointer;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+    .selected {
+      border: 2px solid #0088ff !important;
+    }
+  }
+}

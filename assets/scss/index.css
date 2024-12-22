@@ -2010,4 +2010,90 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     width: 120px;
     height: 35px;
   }
+}
+.singleProduct .productInfo .breadcrumb {
+  display: flex;
+  align-items: center;
+}
+.singleProduct .productInfo .content {
+  display: flex;
+}
+.singleProduct .productInfo .content .productImg {
+  width: 50%;
+}
+.singleProduct .productInfo .content .productDetails {
+  width: 50%;
+}
+.singleProduct .productInfo .content .productDetails .feedback {
+  display: flex;
+}
+.singleProduct .productInfo .content .productDetails .colorSelect {
+  display: flex;
+  gap: 10px;
+}
+.singleProduct .productInfo .content .productDetails .colorSelect .colorOption {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.singleProduct .productInfo .content .productDetails .row .quantitySelect {
+  width: 123px;
+  height: 64px;
+  border: 1px solid #9f9f9f;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.singleProduct .productInfo .content .productDetails .row .quantitySelect #minus,
+.singleProduct .productInfo .content .productDetails .row .quantitySelect #plus {
+  cursor: pointer;
+  font-size: 20px;
+}
+.singleProduct .productInfo .content .productDetails .row .addToCartBtn {
+  width: 215px;
+  height: 64px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  background: transparent;
+  cursor: pointer;
+}
+.singleProduct .productInfo .content .productDetails .info {
+  display: flex;
+  gap: 20px;
+}
+.singleProduct .productInfo .content .productDetails .info .detailList {
+  width: 100%;
+}
+.singleProduct .productInfo .content .productDetails .info .detailList .detailItem {
+  display: flex;
+}
+.singleProduct .productInfo .content .productDetails .info .detailList .detailItem .title {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+.singleProduct .productInfo .content .productDetails .info .detailList .detailItem .title::after {
+  content: ":";
+  color: #9f9f9f;
+  margin-right: 10px;
+}
+.singleProduct .productInfo .content .productDetails .info .detailList .detailItem .socialMedia {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.singleProduct .productInfo .content .productDetails .info .detailList .detailItem .socialMedia img {
+  max-width: 100%;
+  width: 20px;
+  height: 20px;
+}
+.singleProduct .productInfo .content .productDetails .info .wishlist i {
+  color: red;
+  cursor: pointer;
+  font-size: 20px;
+}
+.singleProduct .productInfo .selected {
+  border: 2px solid #0088ff !important;
 }/*# sourceMappingURL=index.css.map */
