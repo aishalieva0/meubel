@@ -5,6 +5,10 @@
     .formCheckout {
       display: flex;
       justify-content: space-between;
+      .errorMsg {
+        color: red;
+        font-size: 14px;
+      }
       .left {
         width: 42%;
         display: flex;

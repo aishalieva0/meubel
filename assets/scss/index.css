@@ -1722,6 +1722,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   display: flex;
   justify-content: space-between;
 }
+.checkout .container .formCheckout .errorMsg {
+  color: red;
+  font-size: 14px;
+}
 .checkout .container .formCheckout .left {
   width: 42%;
   display: flex;

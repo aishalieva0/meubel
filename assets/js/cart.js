@@ -1,7 +1,6 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cartList = document.querySelector('.cartList');
-const total = document.querySelector('#total');
-
+const total = document.querySelector('.total');
 function displayCartPage() {
     cartList.innerHTML = '';
     cart.map(product => {
@@ -22,8 +21,11 @@ function displayCartPage() {
     })
     calculateTotalCart();
 }
-
-displayCartPage()
+if (window.location.pathname.includes('cart')) {
+    displayCartPage()
+} else {
+    displayCheckout()
+}
 
 function removeItem(id, color, size) {
     cart = cart.filter(item =>
@@ -39,4 +41,20 @@ function calculateTotalCart() {
         totalSum += item.price * item.quantity;
     });
     total.textContent = `${totalSum.toFixed(2)}$`;
+}
+
+function displayCheckout() {
+    cartList.innerHTML = '';
+    cart.map(product => {
+        cartList.innerHTML +=
+            `<li class="cartItem">
+                <div class="cartDetail">
+                    <h4>${product.title}</h4>
+                    <span>x</span>
+                    <span class="quantity">${product.quantity}</span>
+                </div>
+                <span class="price">${(product.price * product.quantity).toFixed(2)}$</span>
+            </li>`
+    })
+    calculateTotalCart();
 }
