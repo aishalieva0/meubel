@@ -2,12 +2,12 @@ import { getProductById } from "/assets/js/single-product.js";
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cartCheckout = document.querySelector('#cartCheckout');
 const cartPage = document.querySelector('#cartPage');
-const total = document.querySelector('.total');
 const cartBox = document.querySelector('#cartBox');
 const cartContent = document.querySelector('#cartContent');
 const dropdownCart = document.querySelector('#dropdownCart');
 const cartBtn = document.querySelector('#cartBtn');
 const bottom = document.querySelector('.bottom');
+let total = document.querySelector('.total');
 
 
 function displayCartPage() {
@@ -33,9 +33,11 @@ function displayCartPage() {
     calculateTotalCart();
 }
 if (window.location.pathname.includes('cart')) {
-    displayCartPage()
+    displayCartPage();
+    total = document.querySelector('#cartTotal');
 } else if (window.location.pathname.includes('checkout')) {
     displayCheckout()
+    total = document.querySelector('#checkoutTotal');
 }
 
 export async function addToCart(id) {
