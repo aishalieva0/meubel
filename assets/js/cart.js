@@ -8,6 +8,7 @@ const dropdownCart = document.querySelector('#dropdownCart');
 const cartBtn = document.querySelector('#cartBtn');
 const bottom = document.querySelector('.bottom');
 let total = document.querySelector('.total');
+let cartCount = document.querySelector('#cartCount');
 
 
 function displayCartPage() {
@@ -90,7 +91,8 @@ function removeItem(id, color, size) {
     if (window.location.pathname.includes('cart')) {
         displayCartPage()
     }
-    displayCartBox()
+    displayCartBox();
+    totalCount();
 }
 
 function calculateTotalCart() {
@@ -148,10 +150,10 @@ export function displayCartBox() {
         <div class="empty"><p>Cart is empty</p></div>`;
         bottom.style.display = 'none'
     }
+    totalCount()
 }
 
 displayCartBox()
-
 cartBtn.addEventListener('click', () => {
     dropdownCart.classList.add('activeFlex')
 })
@@ -160,3 +162,15 @@ closeCartBoxBtn.addEventListener('click', () => {
     dropdownCart.classList.remove('activeFlex')
 })
 
+function totalCount() {
+    let totalCount = 0;
+    cart.forEach(item => {
+        totalCount += item.quantity;
+    });
+    if (totalCount == 0) {
+        cartCount.style.display = 'none';
+    } else {
+        cartCount.textContent = totalCount;
+        cartCount.style.display = 'flex';
+    }
+}
