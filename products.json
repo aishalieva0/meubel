@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Asgaard Sofa",
-    "price": 2500,
+    "price": 2499.99,
     "category": "Sofas",
     "description": "Setting the bar as one of the loudest speakers in its class, the Asgaard Sofa is a compact, stout-hearted hero with a well-balanced audio sound which boosts a clear midrange and extended highs for a balanced experience.",
     "longDescription": "Embodying the raw, wayward spirit of rock 'n' roll, the Asgaard Sofa is a compact, stout-hearted hero with a well-balanced design which boosts clear midrange and extended highs for sound that is both articulate and pronounced. The analogue knobs allow you to fine-tune the controls to your personal preferences, while the guitar-influenced leather strap enables easy and stylish transport.",
@@ -12,21 +12,70 @@
     "sku": "SS001",
     "image": "../assets/img/Asgaard sofa 2.png",
     "rating": 1,
-    "reviews": 5
+    "reviews": 2
   },
   {
     "id": 2,
     "title": "Bella chair and table",
-    "price": 100,
+    "price": 345.78,
     "category": "Sofas",
     "description": "Setting the bar as one of the loudest speakers in its class, the Asgaard Sofa is a compact, stout-hearted hero with a well-balanced audio sound which boosts a clear midrange and extended highs for a balanced experience.",
-    "longDescription": "Embodying the raw, wayward spirit of rock 'n' roll, the Asgaard Sofa is a compact, stout-hearted hero with a well-balanced design which boosts clear midrange and extended highs for sound that is both articulate and pronounced. The analogue knobs allow you to fine-tune the controls to your personal preferences, while the guitar-influenced leather strap enables easy and stylish transport.",
+    "about": "Embodying the raw, wayward spirit of rock 'n' roll, the Asgaard Sofa is a compact, stout-hearted hero with a well-balanced design which boosts clear midrange and extended highs for sound that is both articulate and pronounced. The analogue knobs allow you to fine-tune the controls to your personal preferences, while the guitar-influenced leather strap enables easy and stylish transport. ",
+    "longDescription": "Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.",
+    "sizes": ["XS", "L", "XL"],
+    "colors": ["rgb(0, 0, 0)", "rgb(99, 99, 99)", "rgb(55, 55, 55)"],
+    "tags": ["Sofa", "Chair", "Home", "Shop"],
+    "sku": "SS001",
+    "image": "../assets/img/Bella chair and table 1.png",
+    "rating": 2.5,
+    "reviews": 1
+  },
+  {
+    "id": 2,
+    "title": "Bella chair and table",
+    "price": 99.99,
+    "category": "Sofas",
+    "description": "Setting the bar as one of the loudest speakers in its class, the Asgaard Sofa is a compact, stout-hearted hero with a well-balanced audio sound which boosts a clear midrange and extended highs for a balanced experience.",
+    "about": "Embodying the raw, wayward spirit of rock 'n' roll, the Asgaard Sofa is a compact, stout-hearted hero with a well-balanced design which boosts clear midrange and extended highs for sound that is both articulate and pronounced. The analogue knobs allow you to fine-tune the controls to your personal preferences, while the guitar-influenced leather strap enables easy and stylish transport. ",
+    "longDescription": "Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.",
     "sizes": ["XS", "L", "XL"],
     "colors": ["rgb(0, 0, 0)", "rgb(99, 99, 99)", "rgb(55, 55, 55)"],
     "tags": ["Sofa", "Chair", "Home", "Shop"],
     "sku": "SS001",
     "image": "../assets/img/Bella chair and table 1.png",
     "rating": 3.5,
-    "reviews": 5
+    "reviews": 4
+  },
+  {
+    "id": 4,
+    "title": "Bella chair and table",
+    "price": 105.45,
+    "category": "Table",
+    "description": "Setting the bar as one of the loudest speakers in its class, the Asgaard Sofa is a compact, stout-hearted hero with a well-balanced audio sound which boosts a clear midrange and extended highs for a balanced experience.",
+    "about": "Embodying the raw, wayward spirit of rock 'n' roll, the Asgaard Sofa is a compact, stout-hearted hero with a well-balanced design which boosts clear midrange and extended highs for sound that is both articulate and pronounced. The analogue knobs allow you to fine-tune the controls to your personal preferences, while the guitar-influenced leather strap enables easy and stylish transport. ",
+    "longDescription": "Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.",
+    "sizes": ["XS", "L", "XL"],
+    "colors": ["rgb(255, 0, 0)", "rgb(99, 99, 99)", "rgb(55, 55, 55)"],
+    "tags": ["Sofa", "Chair", "Home", "Shop"],
+    "sku": "SS001",
+    "image": "../assets/img/Bella chair and table 1.png",
+    "rating": 3.5,
+    "reviews": 4
+  },
+  {
+    "id": 5,
+    "title": "Bella chair and table",
+    "price": 30.56,
+    "category": "Chair",
+    "description": "Setting the bar as one of the loudest speakers in its class, the Asgaard Sofa is a compact, stout-hearted hero with a well-balanced audio sound which boosts a clear midrange and extended highs for a balanced experience.",
+    "about": "Embodying the raw, wayward spirit of rock 'n' roll, the Asgaard Sofa is a compact, stout-hearted hero with a well-balanced design which boosts clear midrange and extended highs for sound that is both articulate and pronounced. The analogue knobs allow you to fine-tune the controls to your personal preferences, while the guitar-influenced leather strap enables easy and stylish transport. ",
+    "longDescription": "Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.",
+    "sizes": ["XS", "L", "XL"],
+    "colors": ["rgb(99, 0, 0)", "rgb(50, 22, 23)", "rgb(55, 55, 55)"],
+    "tags": ["Sofa", "Chair", "Home", "Shop"],
+    "sku": "SS001",
+    "image": "../assets/img/Bella chair and table 1.png",
+    "rating": 3.5,
+    "reviews": 4
   }
 ]

@@ -95,7 +95,13 @@
             border: 2px solid transparent;
           }
         }
-
+        .msgSize,
+        .msgColor {
+          color: red;
+          font-size: 13px;
+          height: 20px;
+          display: block;
+        }
         .row {
           margin-top: 25px;
           display: flex;
@@ -125,6 +131,9 @@
             font-size: 20px;
           }
         }
+      }
+      .selected {
+        border: 2px solid #0088ff !important;
       }
     }
     .info {
@@ -213,13 +222,12 @@
           }
         }
       }
-    }
-    .selected {
-      border: 2px solid #0088ff !important;
+      .openedTab {
+        color: #000 !important;
+      }
     }
   }
 }
-
 .relatedProducts {
   margin-top: 40px;
   margin-bottom: 50px;

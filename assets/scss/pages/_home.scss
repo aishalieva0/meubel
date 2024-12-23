@@ -137,7 +137,7 @@
       justify-content: center;
       margin: 40px 0;
       gap: 27px;
-      .card {
+      .cardBlog {
         text-align: center;
         .cardImg {
           img {
@@ -343,7 +343,7 @@
 @media (max-width: 878px) {
   .blog {
     .content {
-      .card {
+      .cardBlog {
         width: 100% !important;
 
         .cardImg {

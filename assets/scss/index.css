@@ -701,24 +701,24 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   margin: 40px 0;
   gap: 27px;
 }
-.blog .row .content .card {
+.blog .row .content .cardBlog {
   text-align: center;
 }
-.blog .row .content .card .cardImg img {
+.blog .row .content .cardBlog .cardImg img {
   width: 360px;
   height: 360px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.blog .row .content .card p {
+.blog .row .content .cardBlog p {
   font-size: 18px;
 }
-.blog .row .content .card a {
+.blog .row .content .cardBlog a {
   font-weight: 600;
   text-transform: capitalize;
   position: relative;
 }
-.blog .row .content .card a::after {
+.blog .row .content .cardBlog a::after {
   content: "";
   position: absolute;
   bottom: -8px;
@@ -729,28 +729,28 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   transition: transform 0.4s ease-in-out;
   transform-origin: right;
 }
-.blog .row .content .card a:hover::after {
+.blog .row .content .cardBlog a:hover::after {
   transform: scaleX(0);
   transform-origin: left;
 }
-.blog .row .content .card a::after {
+.blog .row .content .cardBlog a::after {
   bottom: -6px;
 }
-.blog .row .content .card .date {
+.blog .row .content .cardBlog .date {
   margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 12px;
 }
-.blog .row .content .card .date img {
+.blog .row .content .cardBlog .date img {
   width: 18px;
 }
-.blog .row .content .card .date .passedTime {
+.blog .row .content .cardBlog .date .passedTime {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-.blog .row .content .card .date .publishDate {
+.blog .row .content .cardBlog .date .publishDate {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -883,10 +883,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 @media (max-width: 878px) {
-  .blog .content .card {
+  .blog .content .cardBlog {
     width: 100% !important;
   }
-  .blog .content .card .cardImg img {
+  .blog .content .cardBlog .cardImg img {
     width: 100% !important;
     height: auto !important;
   }
@@ -2227,6 +2227,13 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   cursor: pointer;
   border: 2px solid transparent;
 }
+.singleProduct .productInfo .content .productDetails .msgSize,
+.singleProduct .productInfo .content .productDetails .msgColor {
+  color: red;
+  font-size: 13px;
+  height: 20px;
+  display: block;
+}
 .singleProduct .productInfo .content .productDetails .row {
   margin-top: 25px;
   display: flex;
@@ -2254,6 +2261,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   background: transparent;
   cursor: pointer;
   font-size: 20px;
+}
+.singleProduct .productInfo .content .selected {
+  border: 2px solid #0088ff !important;
 }
 .singleProduct .productInfo .info {
   color: #9f9f9f;
@@ -2335,8 +2345,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .singleProduct .productInfo .detailedInfo .imgGroup .detailImg img {
   max-width: 100%;
 }
-.singleProduct .productInfo .selected {
-  border: 2px solid #0088ff !important;
+.singleProduct .productInfo .detailedInfo .openedTab {
+  color: #000 !important;
 }
 
 .relatedProducts {

@@ -1,3 +1,4 @@
+import { getProductById } from "/assets/js/single-product.js";
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cartCheckout = document.querySelector('#cartCheckout');
 const cartPage = document.querySelector('#cartPage');
@@ -7,6 +8,8 @@ const cartContent = document.querySelector('#cartContent');
 const dropdownCart = document.querySelector('#dropdownCart');
 const cartBtn = document.querySelector('#cartBtn');
 const bottom = document.querySelector('.bottom');
+
+
 function displayCartPage() {
     cartPage.innerHTML = '';
     cart.map(product => {
@@ -20,10 +23,12 @@ function displayCartPage() {
             <span class="color" style="background:${product.color}"></span>
             <span class="size">${product.size}</span>
             <input class="quantity" type="number" value="${product.quantity}">
-                <span class="subTotal">${(product.price * product.quantity).toFixed(2)}$</span>
-                <img class="delete" src="../assets/img/icons/ant-design_delete-filled.png"
-                    alt="delete" onclick="removeItem(${product.id}, '${product.color}', '${product.size}')">
+            <span class="subTotal">${(product.price * product.quantity).toFixed(2)}$</span>
+            <img class="delete" src="../assets/img/icons/ant-design_delete-filled.png" alt="delete">
         </li> `
+        cartPage.querySelector('.delete').addEventListener('click', () => {
+            removeItem(product.id, product.color, product.size);
+        });
     })
     calculateTotalCart();
 }
@@ -31,6 +36,48 @@ if (window.location.pathname.includes('cart')) {
     displayCartPage()
 } else if (window.location.pathname.includes('checkout')) {
     displayCheckout()
+}
+
+export async function addToCart(id) {
+    const product = await getProductById(id);
+    if (!product) {
+        console.error('Product not found for adding to cart!');
+        return;
+    }
+    const selectedSize = document.querySelector('.sizeOption.selected')?.innerText;
+    const selectedColor = document.querySelector('.colorOption.selected')?.style.background;
+
+    const sizeMsg = document.querySelector('.productDetails .msgSize');
+    if (sizeMsg) sizeMsg.innerText = !selectedSize ? 'Choose a size' : '';
+
+    const colorMsg = document.querySelector('.productDetails .msgColor');
+    if (colorMsg) colorMsg.innerText = !selectedColor ? 'Choose a color' : '';
+
+    if (!selectedSize || !selectedColor) {
+        return;
+    }
+
+    const quantityElement = document.getElementById('quantity');
+    const selectedQuantity = parseInt(quantityElement.innerText);
+
+    const cartItem = cart.find(item =>
+        item.id === product.id &&
+        item.size === selectedSize &&
+        item.color === selectedColor
+    );
+
+    if (cartItem) {
+        cartItem.quantity += selectedQuantity;
+    } else {
+        cart.push({
+            ...product,
+            size: selectedSize,
+            color: selectedColor,
+            quantity: selectedQuantity,
+        });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCartBox();
 }
 
 function removeItem(id, color, size) {
@@ -68,7 +115,7 @@ function displayCheckout() {
     calculateTotalCart();
 }
 
-function displayCartBox() {
+export function displayCartBox() {
     cartBox.innerHTML = '';
     if (cart.length > 0) {
         cart.map(product => {
@@ -85,11 +132,14 @@ function displayCartBox() {
                     <span class="price">${(product.price * product.quantity).toFixed(2)}$</span>
                 </div>
             </div>
-            <div class="removeBtn" onclick="removeItem(${product.id}, '${product.color}', '${product.size}')">
+            <div class="removeBtn">
                 <img src="/assets/img/icons/delete.png" alt="delete">
             </div>
         </li>`
-        })
+            cartBox.querySelector('.removeBtn').addEventListener('click', () => {
+                removeItem(product.id, product.color, product.size);
+            });
+        });
         calculateTotalCart()
     } else {
         cartContent.innerHTML = `

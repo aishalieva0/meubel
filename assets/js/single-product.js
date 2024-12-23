@@ -1,10 +1,11 @@
+import { addToCart, displayCartBox } from "/assets/js/cart.js";
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 const singleProduct = document.querySelector('#singleProduct');
 const relatedProducts = document.querySelector('#relatedProducts');
 let cartData = JSON.parse(localStorage.getItem('cart')) || [];
 
-async function getProductById(productId) {
+export async function getProductById(productId) {
     const products = await window.getProducts();
     return products.find(p => p.id == productId);
 }
@@ -50,12 +51,12 @@ async function displaySingleProduct() {
             <span class="msgColor"></span>
         <div class="row">
             <div class="quantitySelect">
-                <span id="minus" onclick="quantitySelect('minus')">-</span>
+                <span id="minus">-</span>
                 <span id="quantity">1</span>
-                <span id="plus" onclick="quantitySelect('plus')">+</span>
+                <span id="plus">+</span>
             </div>
-            <button class="addToCartBtn" onclick="addToCart(${product.id})">Add to Cart</button>
-        </div>
+            <button class="addToCartBtn" data-id="${product.id}">Add to Cart</button>
+            </div>
             </div >
         </div > 
                 <div class="info">
@@ -112,11 +113,20 @@ async function displaySingleProduct() {
                             </div>
                         </div>
                     </div>
-        `
+        `;
         selectColorAndSize();
+        document.querySelector('#minus').addEventListener('click', () => quantitySelect('minus'));
+        document.querySelector('#plus').addEventListener('click', () => quantitySelect('plus'));
     } else {
         singleProduct.innerHTML = 'Product not found!';
     }
+
+    document.querySelectorAll('.addToCartBtn').forEach(button => {
+        button.addEventListener('click', () => {
+            const productId = button.getAttribute('data-id');
+            addToCart(productId);
+        });
+    });
 }
 
 function renderSize(sizes) {
@@ -163,47 +173,7 @@ function quantitySelect(type) {
     }
 }
 
-async function addToCart(id) {
-    const product = await getProductById(id);
-    if (!product) {
-        console.error('Product not found for adding to cart!');
-        return;
-    }
-    const selectedSize = document.querySelector('.sizeOption.selected')?.innerText;
-    const selectedColor = document.querySelector('.colorOption.selected')?.style.background;
 
-    const sizeMsg = document.querySelector('.productDetails .msgSize');
-    if (sizeMsg) sizeMsg.innerText = !selectedSize ? 'Choose a size' : '';
-
-    const colorMsg = document.querySelector('.productDetails .msgColor');
-    if (colorMsg) colorMsg.innerText = !selectedColor ? 'Choose a color' : '';
-
-    if (!selectedSize || !selectedColor) {
-        return;
-    }
-
-    const quantityElement = document.getElementById('quantity');
-    const selectedQuantity = parseInt(quantityElement.innerText);
-
-    const cartItem = cartData.find(item =>
-        item.id === product.id &&
-        item.size === selectedSize &&
-        item.color === selectedColor
-    );
-
-    if (cartItem) {
-        cartItem.quantity += selectedQuantity;
-    } else {
-        cartData.push({
-            ...product,
-            size: selectedSize,
-            color: selectedColor,
-            quantity: selectedQuantity,
-        });
-    }
-    localStorage.setItem('cart', JSON.stringify(cartData));
-    // displayCartBox()
-}
 
 function selectColorAndSize() {
     document.querySelectorAll('.sizeOption').forEach(button => {
@@ -246,5 +216,8 @@ async function displayRelatedProducts() {
             </div>`
     })
 }
-displaySingleProduct();
-displayRelatedProducts();
+
+if (window.location.pathname.includes('single-product')) {
+    displaySingleProduct();
+    displayRelatedProducts();
+}
