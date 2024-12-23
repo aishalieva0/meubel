@@ -31,18 +31,18 @@ async function displaySingleProduct() {
             ${renderStars(product.rating)}
             </div>
             <div class="review">
-                <p>${product.reviews}Customer review</p>
+                <p>${product.reviews} Customer review</p>
             </div>
         </div>
 
         <p class="desc">${product.description}</p>
 
-        <p>Size</p>
+        <p class="titleSelect">Size</p>
         <div class="sizeSelect">
             ${renderSize(product.sizes)}
             <p class="msg"></p>
         </div >
-        <p>Color</p>
+        <p class="titleSelect">Color</p>
         <div class="colorSelect">
             ${renderColors(product.colors)}
             <p class="msg"></p>
@@ -55,8 +55,9 @@ async function displaySingleProduct() {
             </div>
             <button class="addToCartBtn" onclick="addToCart(${product.id})">Add to Cart</button>
         </div>
-
-        <div class="info">
+            </div >
+        </div > 
+                <div class="info">
             <ul class="detailList">
                 <li class="detailItem">
                     <span class="title">SKU</span>
@@ -93,8 +94,7 @@ async function displaySingleProduct() {
                 <i class="fa-solid fa-heart"></i>
             </div>
             </div>
-            </div >
-        </div > `
+        `
         selectColorAndSize();
     } else {
         singleProduct.innerHTML = 'Product not found!';
