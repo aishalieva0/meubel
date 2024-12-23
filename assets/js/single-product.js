@@ -1,6 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 const singleProduct = document.querySelector('#singleProduct');
+const relatedProducts = document.querySelector('#relatedProducts');
 let cartData = JSON.parse(localStorage.getItem('cart')) || [];
 
 async function getProductById(productId) {
@@ -40,13 +41,13 @@ async function displaySingleProduct() {
         <p class="titleSelect">Size</p>
         <div class="sizeSelect">
             ${renderSize(product.sizes)}
-            <p class="msg"></p>
-        </div >
+            </div >
+            <span class="msgSize"></span>
         <p class="titleSelect">Color</p>
         <div class="colorSelect">
             ${renderColors(product.colors)}
-            <p class="msg"></p>
-        </div>
+            </div>
+            <span class="msgColor"></span>
         <div class="row">
             <div class="quantitySelect">
                 <span id="minus" onclick="quantitySelect('minus')">-</span>
@@ -94,6 +95,23 @@ async function displaySingleProduct() {
                 <i class="fa-solid fa-heart"></i>
             </div>
             </div>
+            <div class="detailedInfo">
+                        <ul class="titleList">
+                            <li class="titleItem openedTab">Description</li>
+                            <li class="titleItem">Additional Information</li>
+                            <li class="titleItem">Reviews [${product.reviews}]</li>
+                        </ul>
+                        <p class="desc">${product.about}</p>
+                        <p class="desc">${product.longDescription}</p>
+                        <div class="imgGroup">
+                            <div class="detailImg">
+                                <img src="${product.image}" alt="sofa">
+                            </div>
+                            <div class="detailImg">
+                                <img src="${product.image}" alt="sofa">
+                            </div>
+                        </div>
+                    </div>
         `
         selectColorAndSize();
     } else {
@@ -154,10 +172,10 @@ async function addToCart(id) {
     const selectedSize = document.querySelector('.sizeOption.selected')?.innerText;
     const selectedColor = document.querySelector('.colorOption.selected')?.style.background;
 
-    const sizeMsg = document.querySelector('.sizeSelect .msg');
+    const sizeMsg = document.querySelector('.productDetails .msgSize');
     if (sizeMsg) sizeMsg.innerText = !selectedSize ? 'Choose a size' : '';
 
-    const colorMsg = document.querySelector('.colorSelect .msg');
+    const colorMsg = document.querySelector('.productDetails .msgColor');
     if (colorMsg) colorMsg.innerText = !selectedColor ? 'Choose a color' : '';
 
     if (!selectedSize || !selectedColor) {
@@ -184,7 +202,7 @@ async function addToCart(id) {
         });
     }
     localStorage.setItem('cart', JSON.stringify(cartData));
-
+    // displayCartBox()
 }
 
 function selectColorAndSize() {
@@ -205,4 +223,28 @@ function selectColorAndSize() {
     });
 }
 
-displaySingleProduct()
+async function displayRelatedProducts() {
+    const findedProduct = await getProductById(productId);
+    const products = await window.getProducts();
+    const relatedProductsData = products.filter(item =>
+        findedProduct.category === item.category &&
+        findedProduct.id != item.id
+    )
+    relatedProducts.innerHTML = '';
+    relatedProductsData.map(product => {
+        relatedProducts.innerHTML +=
+            `<div class="card">
+                <a href="./single-product.html?id=${product.id}"">
+                    <div class="cardImg">
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    <div class="details">
+                        <p class="title">${product.title}</p>
+                        <p class="price"><span>${product.price}$</span></p>
+                    </div>
+                </a>
+            </div>`
+    })
+}
+displaySingleProduct();
+displayRelatedProducts();
