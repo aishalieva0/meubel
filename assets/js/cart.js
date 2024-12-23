@@ -118,7 +118,7 @@ function displayCheckout() {
 export function displayCartBox() {
     cartBox.innerHTML = '';
     if (cart.length > 0) {
-        cart.map(product => {
+        cart.map(async product => {
             cartBox.innerHTML +=
                 `<li class="cartItem">
             <div class="productImg">
@@ -135,7 +135,7 @@ export function displayCartBox() {
             <div class="removeBtn">
                 <img src="/assets/img/icons/delete.png" alt="delete">
             </div>
-        </li>`
+                </li>`
             cartBox.querySelector('.removeBtn').addEventListener('click', () => {
                 removeItem(product.id, product.color, product.size);
             });

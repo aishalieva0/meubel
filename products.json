@@ -27,7 +27,7 @@
     "tags": ["Sofa", "Chair", "Home", "Shop"],
     "sku": "SS001",
     "image": "../assets/img/Bella chair and table 1.png",
-    "rating": 2.5,
+    "rating": 5,
     "reviews": 1
   },
   {
@@ -43,7 +43,7 @@
     "tags": ["Sofa", "Chair", "Home", "Shop"],
     "sku": "SS001",
     "image": "../assets/img/Bella chair and table 1.png",
-    "rating": 3.5,
+    "rating": 4.5,
     "reviews": 4
   },
   {
@@ -59,7 +59,7 @@
     "tags": ["Sofa", "Chair", "Home", "Shop"],
     "sku": "SS001",
     "image": "../assets/img/Bella chair and table 1.png",
-    "rating": 3.5,
+    "rating": 5,
     "reviews": 4
   },
   {
@@ -75,7 +75,7 @@
     "tags": ["Sofa", "Chair", "Home", "Shop"],
     "sku": "SS001",
     "image": "../assets/img/Bella chair and table 1.png",
-    "rating": 3.5,
+    "rating": 4,
     "reviews": 4
   }
 ]
