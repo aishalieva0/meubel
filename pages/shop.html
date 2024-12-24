@@ -63,8 +63,16 @@
                         </li>
                     </ul>
                     <div class="searchBox">
-                        <img src="../assets/img/icons/akar-icons_search.png" alt="search">
-                        <input type="text" name="search" id="search" placeholder="Search..">
+                        <div class="searchContent">
+                            <div class="searchInput">
+                                <img src="../assets/img/icons/akar-icons_search.png" alt="search">
+                                <input type="text" name="search" id="search" oninput="searchProducts(this.value)"
+                                    placeholder="Search..">
+                            </div>
+                            <div class="searchResult" id="searchResult">
+                                <ul class="searchResultList" id="searchResultList"></ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="cartBox" id="dropdownCart">
                         <div class="title">
@@ -432,6 +440,7 @@
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/product.js"></script>
     <script type="module" src="../assets/js/cart.js"></script>
+    <script src="/assets/js/search.js"></script>
 
 </body>
 
