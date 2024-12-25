@@ -5,7 +5,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-
+  overflow: hidden;
   &::before {
     content: "";
     position: absolute;
@@ -56,7 +56,7 @@
 
 .filter {
   background: #faf4f4;
-  margin: 40px 0;
+  margin-top: 40px;
   height: 100px;
   align-items: center;
   display: flex;
@@ -78,6 +78,8 @@
           display: flex;
           align-items: center;
           gap: 10px;
+          cursor: pointer;
+          user-select: none;
         }
         img {
           max-width: 100%;
@@ -165,39 +167,139 @@
   }
 }
 
-.products {
-  .row {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .content {
-      display: grid;
-      gap: 0;
-      width: 100%;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.shop {
+  display: flex;
+  width: 100%;
+  .filterBox {
+    box-shadow: #ddd 1px 1px 1px;
+    width: 300px;
+    display: none;
+    height: fit-content;
+    padding: 15px 25px;
+    .selected {
+      border: 2px solid #00b7ff;
     }
-
-    .pagination {
+    h4 {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 10px 0 5px;
+    }
+    .filterBtns {
+      width: 100%;
       display: flex;
-      gap: 20px;
       align-items: center;
-      justify-content: center;
-      margin: 70px 0;
-      cursor: pointer;
-      span {
-        width: 50px;
-        height: 50px;
-        background: #fff9e5;
+      justify-content: space-between;
+      .clearAll {
+        cursor: pointer;
+      }
+      .filterCloseBtn {
+        cursor: pointer;
+      }
+    }
+    .priceFilter {
+      .inputGroup {
         display: flex;
+        justify-content: center;
+        gap: 30px;
+        input {
+          border: 1px solid #ddd;
+          outline: none;
+          width: 100px;
+          height: 40px;
+          text-align: center;
+          border-radius: 10px;
+        }
+      }
+    }
+    .categoryFilter {
+      .categoryList {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        li {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          cursor: pointer;
+          label,
+          input {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .sizeFilter {
+      .sizeList {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        li {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          label,
+          input {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .filterColor {
+      .colorList {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        li {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+    }
+    input[type="checkbox"] {
+      accent-color: #000;
+      width: 27px;
+      height: 17px;
+    }
+  }
+  .products {
+    width: 100%;
+
+    .row {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .content {
+        display: grid;
+        gap: 0;
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .pagination {
+        display: flex;
+        gap: 20px;
         align-items: center;
         justify-content: center;
-        border-radius: 10px;
-      }
-      span:first-child {
-        background: #fbebb5;
-      }
-      span:last-child {
-        width: 90px;
+        margin: 70px 0;
+        cursor: pointer;
+        span {
+          width: 50px;
+          height: 50px;
+          background: #fff9e5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+        }
+        span:first-child {
+          background: #fbebb5;
+        }
+        span:last-child {
+          width: 90px;
+        }
       }
     }
   }

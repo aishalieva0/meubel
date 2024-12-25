@@ -627,6 +627,31 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   font-weight: 600;
 }
 
+.cardListStyle {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+}
+.cardListStyle .card {
+  width: 50%;
+  height: 200px;
+}
+.cardListStyle .card a {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.cardListStyle .card a .cardImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cardListStyle .card a .cardImg img {
+  max-width: 100%;
+  width: 280px;
+  height: auto;
+}
+
 .hero {
   background: #fbebb5;
   width: 100%;
@@ -1194,6 +1219,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
 }
 .heroBreadcrumb::before {
   content: "";
@@ -1242,7 +1268,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .filter {
   background: #faf4f4;
-  margin: 40px 0;
+  margin-top: 40px;
   height: 100px;
   align-items: center;
   display: flex;
@@ -1265,6 +1291,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .filter .row .left .filterView img {
   max-width: 100%;
@@ -1341,18 +1371,112 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   background: #fbebb5;
 }
 
-.products .row {
+.shop {
+  display: flex;
+  width: 100%;
+}
+.shop .filterBox {
+  box-shadow: #ddd 1px 1px 1px;
+  width: 300px;
+  display: none;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 15px 25px;
+}
+.shop .filterBox .selected {
+  border: 2px solid #00b7ff;
+}
+.shop .filterBox h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 10px 0 5px;
+}
+.shop .filterBox .filterBtns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.shop .filterBox .filterBtns .clearAll {
+  cursor: pointer;
+}
+.shop .filterBox .filterBtns .filterCloseBtn {
+  cursor: pointer;
+}
+.shop .filterBox .priceFilter .inputGroup {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.shop .filterBox .priceFilter .inputGroup input {
+  border: 1px solid #ddd;
+  outline: none;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+.shop .filterBox .categoryFilter .categoryList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.shop .filterBox .categoryFilter .categoryList li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.shop .filterBox .categoryFilter .categoryList li label,
+.shop .filterBox .categoryFilter .categoryList li input {
+  cursor: pointer;
+}
+.shop .filterBox .sizeFilter .sizeList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.shop .filterBox .sizeFilter .sizeList li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.shop .filterBox .sizeFilter .sizeList li label,
+.shop .filterBox .sizeFilter .sizeList li input {
+  cursor: pointer;
+}
+.shop .filterBox .filterColor .colorList {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+.shop .filterBox .filterColor .colorList li {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.shop .filterBox input[type=checkbox] {
+  accent-color: #000;
+  width: 27px;
+  height: 17px;
+}
+.shop .products {
+  width: 100%;
+}
+.shop .products .row {
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.products .row .content {
+.shop .products .row .content {
   display: grid;
   gap: 0;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
-.products .row .pagination {
+.shop .products .row .pagination {
   display: flex;
   gap: 20px;
   align-items: center;
@@ -1360,7 +1484,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   margin: 70px 0;
   cursor: pointer;
 }
-.products .row .pagination span {
+.shop .products .row .pagination span {
   width: 50px;
   height: 50px;
   background: #fff9e5;
@@ -1369,10 +1493,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   justify-content: center;
   border-radius: 10px;
 }
-.products .row .pagination span:first-child {
+.shop .products .row .pagination span:first-child {
   background: #fbebb5;
 }
-.products .row .pagination span:last-child {
+.shop .products .row .pagination span:last-child {
   width: 90px;
 }
 

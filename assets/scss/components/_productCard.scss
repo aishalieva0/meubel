@@ -21,3 +21,28 @@
     }
   }
 }
+
+.cardListStyle {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  .card {
+    width: 50%;
+    height: 200px;
+    a {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      .cardImg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          max-width: 100%;
+          width: 280px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
