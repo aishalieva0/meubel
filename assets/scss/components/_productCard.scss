@@ -29,6 +29,8 @@
   .card {
     width: 50%;
     height: 200px;
+    align-items: flex-start;
+
     a {
       display: flex;
       align-items: center;
@@ -36,7 +38,7 @@
       .cardImg {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         img {
           max-width: 100%;
           width: 280px;

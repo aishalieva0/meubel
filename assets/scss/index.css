@@ -635,6 +635,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .cardListStyle .card {
   width: 50%;
   height: 200px;
+  align-items: flex-start;
 }
 .cardListStyle .card a {
   display: flex;
@@ -644,7 +645,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .cardListStyle .card a .cardImg {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .cardListStyle .card a .cardImg img {
   max-width: 100%;
