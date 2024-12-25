@@ -1494,10 +1494,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   justify-content: center;
   border-radius: 10px;
 }
-.shop .products .row .pagination span:first-child {
+.shop .products .row .pagination .activePage {
   background: #fbebb5;
 }
-.shop .products .row .pagination span:last-child {
+.shop .products .row .pagination .next,
+.shop .products .row .pagination .prev {
   width: 90px;
 }
 

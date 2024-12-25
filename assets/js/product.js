@@ -1,3 +1,4 @@
+import { updatePagination } from '/assets/js/filter.js';
 const productContent = document.querySelector('#productContent');
 const topPicks = document.querySelector('#topPicks');
 
@@ -25,6 +26,7 @@ export async function displayProducts(products) {
                 </a>
             </div>`
     })
+    updatePagination(products.length);
 }
 
 async function displayTopPicks(products) {

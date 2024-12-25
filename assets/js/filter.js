@@ -4,6 +4,10 @@ let sizes = [];
 let colors = [];
 let filteredProducts = [];
 let products = [];
+let pagination = {
+    currentPage: 1,
+    itemsPerPage: 12,
+};
 
 const categoryList = document.querySelector('#categoryList');
 const sizeList = document.querySelector('#sizeList');
@@ -17,10 +21,15 @@ const filterOpenBtn = document.querySelector('.filterOpenBtn');
 const productContent = document.querySelector('#productContent');
 const gridStyle = document.querySelector('#gridStyle');
 const listStyle = document.querySelector('#listStyle');
+const paginationContainer = document.querySelector('.pagination');
 
 document.addEventListener('DOMContentLoaded', async () => {
     products = await window.getProducts();
-    displayProducts(products);
+    filteredProducts = products;
+    pagination.currentPage = 1;
+    const paginatedProducts = applyPagination(filteredProducts);
+    displayProducts(paginatedProducts);
+    updatePagination(filteredProducts.length);
     displayColors();
     displaySizes();
     displayCategories();
@@ -43,7 +52,10 @@ function applyFilters() {
         return matchesCategory && matchesSize && matchesColor && matchesPrice;
     });
 
-    displayProducts(filteredProducts);
+    pagination.currentPage = 1;
+    const paginatedProducts = applyPagination(filteredProducts);
+    displayProducts(paginatedProducts);
+    updatePagination(filteredProducts.length);
 }
 
 function displayOptions(optionList, options) {
@@ -66,7 +78,6 @@ function displayCategories() {
 
     displayOptions(categoryList, categories);
 }
-
 
 async function displaySizes() {
     products.filter(product => {
@@ -122,8 +133,14 @@ document.querySelector('.clearAll').addEventListener('click', () => {
     document.querySelectorAll('#colorList .colorItem').forEach(item => item.classList.remove('selected'));
     minPriceInput.value = '';
     maxPriceInput.value = '';
-    displayProducts(products);
+
+    filteredProducts = products;
+    pagination.currentPage = 1;
+    const paginatedProducts = applyPagination(filteredProducts);
+    displayProducts(paginatedProducts);
+    updatePagination(filteredProducts.length);
 });
+
 
 filterCloseBtn.addEventListener('click', () => {
     filterBox.classList.remove('active');
@@ -147,3 +164,54 @@ gridStyle.addEventListener('click', () => {
 listStyle.addEventListener('click', () => {
     productContent.classList.add('cardListStyle');
 });
+
+
+function applyPagination(products) {
+    const { currentPage, itemsPerPage } = pagination;
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    return products.slice(startIndex, endIndex);
+}
+
+export function updatePagination(totalItems) {
+    const { itemsPerPage, currentPage } = pagination;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    paginationContainer.innerHTML = '';
+
+    for (let i = 1; i <= totalPages; i++) {
+        const isActive = i === currentPage ? 'activePage' : '';
+        paginationContainer.innerHTML += `<span class="page ${isActive}" data-page="${i}">${i}</span>`;
+    }
+
+    if (currentPage < totalPages) {
+        paginationContainer.innerHTML += `<span class="next">Next</span>`;
+    }
+
+    if (currentPage > 1) {
+        paginationContainer.innerHTML = `<span class="prev">Previous</span>` + paginationContainer.innerHTML;
+    }
+
+    paginationContainer.querySelectorAll('.page').forEach(page => {
+        page.addEventListener('click', () => {
+            pagination.currentPage = parseInt(page.dataset.page);
+            const paginatedProducts = applyPagination(filteredProducts);
+            displayProducts(paginatedProducts);
+            updatePagination(filteredProducts.length);
+        });
+    });
+
+    paginationContainer.querySelector('.next')?.addEventListener('click', () => {
+        pagination.currentPage++;
+        const paginatedProducts = applyPagination(filteredProducts);
+        displayProducts(paginatedProducts);
+        updatePagination(filteredProducts.length);
+    });
+
+    paginationContainer.querySelector('.prev')?.addEventListener('click', () => {
+        pagination.currentPage--;
+        const paginatedProducts = applyPagination(filteredProducts);
+        displayProducts(paginatedProducts);
+        updatePagination(filteredProducts.length);
+    });
+}

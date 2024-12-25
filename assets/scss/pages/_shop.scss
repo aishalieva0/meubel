@@ -294,10 +294,11 @@
           justify-content: center;
           border-radius: 10px;
         }
-        span:first-child {
+        .activePage {
           background: #fbebb5;
         }
-        span:last-child {
+        .next,
+        .prev {
           width: 90px;
         }
       }
