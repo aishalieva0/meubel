@@ -4,8 +4,10 @@ const searchBtn = document.querySelector('#searchBtn');
 const searchBox = document.querySelector('.searchBox');
 const closeIcon = document.querySelector('#closeIcon');
 const searchIcon = document.querySelector('#searchIcon');
+const closeCartBoxBtn = document.querySelector('#closeCartBoxBtn');
 const layout = document.querySelector('.layout');
 const navItems = document.querySelectorAll('.navItem a');
+const newsletterForm = document.querySelector('.newsletterForm');
 const { pathname } = window.location;
 
 hamburger.addEventListener('click', () => {
@@ -44,8 +46,28 @@ navItems.forEach(navItem => {
 cartBtn.addEventListener('click', () => {
     dropdownCart.classList.add('activeFlex')
 })
-const closeCartBoxBtn = document.querySelector('#closeCartBoxBtn');
 closeCartBoxBtn.addEventListener('click', () => {
     dropdownCart.classList.remove('activeFlex')
 })
 
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = newsletterForm.email.value;
+    const newsletterMsg = document.createElement('span')
+    newsletterMsg.classList.add('newsletterMsg');
+    if (!validateEmail(email)) {
+        newsletterMsg.innerText = 'Please enter a valid email address';
+    } else {
+        newsletterMsg.innerText = 'Thank you for subscribing!';
+        newsletterMsg.classList.add('succesMsg');
+        newsletterForm.reset();
+    }
+    newsletterForm.parentElement.appendChild(newsletterMsg);
+    setTimeout(() => {
+        newsletterMsg.remove();
+    }, 3000);
+})
