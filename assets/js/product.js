@@ -1,4 +1,4 @@
-import { updatePagination } from '/assets/js/filter.js';
+import { updatePagination } from './filter.js';
 const productContent = document.querySelector('#productContent');
 const topPicks = document.querySelector('#topPicks');
 
