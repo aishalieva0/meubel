@@ -1,6 +1,11 @@
 let searchedData = [];
 const searchResult = document.querySelector('#searchResult');
 const searchResultList = document.querySelector('#searchResultList');
+const searchBtn = document.querySelector('#searchBtn');
+const searchBox = document.querySelector('.searchBox');
+const closeIcon = document.querySelector('#closeIcon');
+const searchIcon = document.querySelector('#searchIcon');
+const searchInput = document.querySelector('#search')
 async function searchProducts(value) {
     const products = await window.getProducts();
     value.split(' ').filter(searchValue => {
@@ -38,3 +43,25 @@ function displaySearchResult(data) {
     }
 }
 
+searchBtn.addEventListener('click', (e) => {
+    searchBox.classList.add('activeFlex');
+    if (searchBox.className.includes('activeFlex')) {
+        layout.classList.add('active');
+    }
+})
+
+closeIcon.addEventListener('click', () => {
+    searchBox.classList.remove('activeFlex');
+    layout.classList.remove('active');
+    searchResult.classList.remove('active');
+    searchInput.value = '';
+})
+
+
+layout.addEventListener('click', () => {
+    searchBox.classList.remove('activeFlex')
+    dropdownCart.classList.remove('activeFlex');
+    layout.classList.remove('active');
+    searchResult.classList.remove('active');
+    searchInput.value = '';
+})

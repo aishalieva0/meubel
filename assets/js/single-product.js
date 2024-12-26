@@ -201,7 +201,7 @@ async function displayRelatedProducts() {
         findedProduct.id != item.id
     )
     relatedProducts.innerHTML = '';
-    relatedProductsData.map(product => {
+    relatedProductsData.slice(0, 4).map(product => {
         relatedProducts.innerHTML +=
             `<div class="card">
                 <a href="./single-product.html?id=${product.id}"">
