@@ -112,6 +112,8 @@ function displayCheckout() {
                     <h4>${product.title}</h4>
                     <span>x</span>
                     <span class="quantity">${product.quantity}</span>
+                    <span class="color" style="background:${product.color}"></span> 
+                    <span>${product.size}</span>
                 </div>
                 <span class="price">${(product.price * product.quantity).toFixed(2)}$</span>
             </li>`

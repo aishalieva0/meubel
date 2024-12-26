@@ -17,6 +17,7 @@ const maxPriceInput = document.querySelector('#maxPrice');
 const filterCloseBtn = document.querySelector('.filterCloseBtn');
 const filterBox = document.querySelector('.filterBox');
 const product = document.querySelector('#product');
+const clearAll = document.querySelector('.clearAll');
 const filterOpenBtn = document.querySelector('.filterOpenBtn');
 const productContent = document.querySelector('#productContent');
 const gridStyle = document.querySelector('#gridStyle');
@@ -27,22 +28,84 @@ const showStart = document.querySelector('.showStart');
 const showEnd = document.querySelector('.showEnd');
 const itemsPerPageCount = document.querySelector('.itemsPerPageCount');
 const sortByOptions = document.querySelectorAll('.shortByDropdown .dropdownItem');
+const shortBy = document.querySelector('#shortBy');
+const shortByDropdown = document.querySelector('.shortByDropdown');
+const dropdownItem = document.querySelectorAll('.dropdownList .dropdownItem');
 
-document.addEventListener('DOMContentLoaded', async () => {
-    products = await window.getProducts();
-    filteredProducts = products;
-    pagination.currentPage = 1;
-    itemsPerPageCount.value = pagination.itemsPerPage;
-    const paginatedProducts = applyPagination(filteredProducts);
-    displayProducts(paginatedProducts);
-    updatePagination(filteredProducts.length);
-    displayColors();
-    displaySizes();
-    displayCategories();
-    triggerFilters();
-    shortBy();
-});
+if (window.location.pathname.includes('shop')) {
+    document.addEventListener('DOMContentLoaded', async () => {
+        products = await window.getProducts();
+        filteredProducts = products;
+        pagination.currentPage = 1;
+        itemsPerPageCount.value = pagination.itemsPerPage;
+        const paginatedProducts = applyPagination(filteredProducts);
+        displayProducts(paginatedProducts);
+        updatePagination(filteredProducts.length);
+        displayColors();
+        displaySizes();
+        displayCategories();
+        triggerFilters();
+        shortByOptions();
+    });
+    clearAll.addEventListener('click', () => {
+        document.querySelectorAll('#categoryList input').forEach(input => (input.checked = false));
+        document.querySelectorAll('#sizeList input').forEach(input => (input.checked = false));
+        document.querySelectorAll('#colorList .colorItem').forEach(item => item.classList.remove('selected'));
+        minPriceInput.value = '';
+        maxPriceInput.value = '';
 
+        filteredProducts = products;
+        pagination.currentPage = 1;
+        const paginatedProducts = applyPagination(filteredProducts);
+        displayProducts(paginatedProducts);
+        updatePagination(filteredProducts.length);
+    });
+
+    filterCloseBtn.addEventListener('click', () => {
+        filterBox.classList.remove('active');
+        console.log(product)
+        product.style.width = '100%';
+    });
+
+    filterOpenBtn.addEventListener('click', () => {
+        filterBox.classList.toggle('active');
+        if (filterBox.className.includes('active')) {
+            product.style.width = '80%';
+        } else {
+            product.style.width = '100%';
+        }
+    })
+
+    gridStyle.addEventListener('click', () => {
+        productContent.classList.remove('cardListStyle');
+    });
+
+    listStyle.addEventListener('click', () => {
+        productContent.classList.add('cardListStyle');
+    });
+
+    itemsPerPageCount.addEventListener('input', () => {
+        const count = itemsPerPageCount.value;
+        if (count > 0) {
+            pagination.itemsPerPage = count;
+            pagination.currentPage = 1;
+            const paginatedProducts = applyPagination(filteredProducts);
+            displayProducts(paginatedProducts);
+            updatePagination(filteredProducts.length);
+        }
+    });
+
+    shortBy.addEventListener('click', (e) => {
+        shortByDropdown.classList.toggle('open')
+    })
+
+    dropdownItem.forEach(item => {
+        item.addEventListener('click', () => {
+            shortByDropdown.classList.remove('open')
+            shortBy.textContent = item.textContent
+        })
+    });
+}
 function applyFilters() {
     const selectedCategories = Array.from(document.querySelectorAll('#categoryList input:checked')).map(input => input.name);
     const selectedSizes = Array.from(document.querySelectorAll('#sizeList input:checked')).map(input => input.name);
@@ -134,42 +197,6 @@ function triggerFilters() {
     });
 }
 
-document.querySelector('.clearAll').addEventListener('click', () => {
-    document.querySelectorAll('#categoryList input').forEach(input => (input.checked = false));
-    document.querySelectorAll('#sizeList input').forEach(input => (input.checked = false));
-    document.querySelectorAll('#colorList .colorItem').forEach(item => item.classList.remove('selected'));
-    minPriceInput.value = '';
-    maxPriceInput.value = '';
-
-    filteredProducts = products;
-    pagination.currentPage = 1;
-    const paginatedProducts = applyPagination(filteredProducts);
-    displayProducts(paginatedProducts);
-    updatePagination(filteredProducts.length);
-});
-
-filterCloseBtn.addEventListener('click', () => {
-    filterBox.classList.remove('active');
-    console.log(product)
-    product.style.width = '100%';
-});
-
-filterOpenBtn.addEventListener('click', () => {
-    filterBox.classList.toggle('active');
-    if (filterBox.className.includes('active')) {
-        product.style.width = '80%';
-    } else {
-        product.style.width = '100%';
-    }
-})
-
-gridStyle.addEventListener('click', () => {
-    productContent.classList.remove('cardListStyle');
-});
-
-listStyle.addEventListener('click', () => {
-    productContent.classList.add('cardListStyle');
-});
 
 
 function applyPagination(products) {
@@ -225,23 +252,10 @@ export function updatePagination(totalItems) {
 
     totalProducts.textContent = totalItems;
 }
-
-itemsPerPageCount.addEventListener('input', () => {
-    const count = itemsPerPageCount.value;
-    if (count > 0) {
-        pagination.itemsPerPage = count;
-        pagination.currentPage = 1;
-        const paginatedProducts = applyPagination(filteredProducts);
-        displayProducts(paginatedProducts);
-        updatePagination(filteredProducts.length);
-    }
-});
-
-function shortBy() {
+function shortByOptions() {
     sortByOptions.forEach(option => {
         option.addEventListener('click', () => {
             const chosen = option.id;
-            console.log(filteredProducts.sort())
             switch (chosen) {
                 case 'priceLowToHigh':
                     filteredProducts.sort((a, b) => a.price - b.price);

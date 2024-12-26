@@ -5,9 +5,7 @@ const searchBox = document.querySelector('.searchBox');
 const closeIcon = document.querySelector('#closeIcon');
 const searchIcon = document.querySelector('#searchIcon');
 const layout = document.querySelector('.layout');
-const shortBy = document.querySelector('#shortBy');
-const shortByDropdown = document.querySelector('.shortByDropdown');
-const dropdownItem = document.querySelectorAll('.dropdownList .dropdownItem');
+const navItems = document.querySelectorAll('.navItem a');
 const { pathname } = window.location;
 
 hamburger.addEventListener('click', () => {
@@ -32,15 +30,8 @@ layout.addEventListener('click', () => {
     searchIcon.style.display = 'block'
 })
 
-if (pathname.includes('shop')) {
-    shortBy.addEventListener('click', (e) => {
-        shortByDropdown.classList.toggle('open')
-    })
-
-    dropdownItem.forEach(item => {
-        item.addEventListener('click', () => {
-            shortByDropdown.classList.remove('open')
-            shortBy.textContent = item.textContent
-        })
-    });
-}
+navItems.forEach(navItem => {
+    if (window.location.href.includes(navItem.href)) {
+        navItem.classList.add('isCurrent');
+    }
+})

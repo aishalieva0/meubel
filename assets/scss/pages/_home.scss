@@ -120,6 +120,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: .5s ease;
+        &:hover {
+          transform: scale(0.9);
+        }
       }
     }
   }

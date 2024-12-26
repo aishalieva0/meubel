@@ -58,6 +58,14 @@
           gap: 50px;
           width: 65%;
           justify-content: center;
+          .isCurrent {
+            @include primaryBtn;
+            &::after {
+              bottom: 0;
+              height: 1px;
+              background-color: #909090;
+            }
+          }
         }
         .userAreaList {
           display: flex;
@@ -73,6 +81,10 @@
             width: 28px;
             transition: 0.5s ease;
             position: relative;
+            transition: 0.3s ease;
+            &:hover {
+              transform: scale(1.1);
+            }
             img {
               max-width: 100%;
               display: flex;
@@ -190,7 +202,7 @@
                     }
                   }
                 }
-                .noResult{
+                .noResult {
                   display: flex;
                   align-items: center;
                   justify-content: center;
@@ -340,7 +352,6 @@
 
           .userAreaList {
             gap: 25px;
-
             .userAreaItem {
               img {
                 width: 24px;

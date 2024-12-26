@@ -4,10 +4,8 @@ const topPicks = document.querySelector('#topPicks');
 
 document.addEventListener('DOMContentLoaded', async () => {
     const products = await window.getProducts();
-    if (window.location.pathname.includes('shop')) {
-        // displayProducts(products)
-    } else {
-        displayTopPicks(products)
+    if (window.location.pathname.includes('index') || window.location.pathname === '/') {
+        displayTopPicks(products, 4)
     }
 });
 export async function displayProducts(products) {
@@ -29,8 +27,8 @@ export async function displayProducts(products) {
     updatePagination(products.length);
 }
 
-async function displayTopPicks(products) {
-    const topPicksProducts = products.filter(product => product.rating >= 4);
+async function displayTopPicks(products, limit) {
+    const topPicksProducts = products.filter(product => product.rating >= 4.5).slice(0, limit);
     topPicks.innerHTML = '';
     topPicksProducts.map(product => {
         topPicks.innerHTML +=
