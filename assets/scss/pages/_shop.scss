@@ -275,6 +275,18 @@
         gap: 0;
         width: 100%;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+        .notFound {
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          p {
+            font-size: 26px;
+            font-weight: 500;
+          }
+        }
       }
 
       .pagination {

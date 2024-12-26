@@ -41,6 +41,39 @@ if (window.location.pathname.includes('cart')) {
     total = document.querySelector('#checkoutTotal');
 }
 
+export function displayCartBox() {
+    cartBox.innerHTML = '';
+    if (cart.length > 0) {
+        cart.map(product => {
+            cartBox.innerHTML +=
+                `<li class="cartItem">
+            <div class="productImg">
+                <img src="${product.image}" alt="${product.title}">
+            </div>
+            <div class="info">
+                <h4>${product.title}</h4>
+                <div class="details">
+                    <span class="quantity">${product.quantity}</span>
+                    <span>x</span>
+                    <span class="price">${(product.price * product.quantity).toFixed(2)}$</span>
+                </div>
+            </div>
+            <div class="removeBtn">
+                <img src="../assets/img/icons/delete.png" alt="delete">
+            </div>
+                </li>`
+            cartBox.querySelector('.removeBtn').addEventListener('click', () => {
+                removeItem(product.id, product.color, product.size);
+            });
+        });
+        calculateTotalCart()
+    } else {
+        cartContent.innerHTML = `
+        <div class="empty"><p>Cart is empty</p></div>`;
+        bottom.style.display = 'none'
+    }
+    totalCount()
+}
 export async function addToCart(id) {
     const product = await getProductById(id);
     if (!product) {
@@ -121,42 +154,9 @@ function displayCheckout() {
     calculateTotalCart();
 }
 
-export function displayCartBox() {
-    cartBox.innerHTML = '';
-    if (cart.length > 0) {
-        cart.map(async product => {
-            cartBox.innerHTML +=
-                `<li class="cartItem">
-            <div class="productImg">
-                <img src="${product.image}" alt="${product.title}">
-            </div>
-            <div class="info">
-                <h4>${product.title}</h4>
-                <div class="details">
-                    <span class="quantity">${product.quantity}</span>
-                    <span>x</span>
-                    <span class="price">${(product.price * product.quantity).toFixed(2)}$</span>
-                </div>
-            </div>
-            <div class="removeBtn">
-                <img src="../assets/img/icons/delete.png" alt="delete">
-            </div>
-                </li>`
-            cartBox.querySelector('.removeBtn').addEventListener('click', () => {
-                removeItem(product.id, product.color, product.size);
-            });
-        });
-        calculateTotalCart()
-    } else {
-        cartContent.innerHTML = `
-        <div class="empty"><p>Cart is empty</p></div>`;
-        bottom.style.display = 'none'
-    }
-    totalCount()
+if (!cart) {
+    displayCartBox()
 }
-
-displayCartBox()
-
 
 function totalCount() {
     let totalCount = 0;

@@ -1,9 +1,9 @@
 import { addToCart, displayCartBox } from "./cart.js";
+import { addToWishlist } from "./wishlist.js";
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 const singleProduct = document.querySelector('#singleProduct');
 const relatedProducts = document.querySelector('#relatedProducts');
-let cartData = JSON.parse(localStorage.getItem('cart')) || [];
 
 export async function getProductById(productId) {
     const products = await window.getProducts();
@@ -12,6 +12,8 @@ export async function getProductById(productId) {
 
 async function displaySingleProduct() {
     const product = await getProductById(productId);
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const isWishlist = wishlist.some(item => item.id == productId)
     if (product) {
         singleProduct.innerHTML =
             `<div class="breadcrumb">
@@ -91,9 +93,8 @@ async function displaySingleProduct() {
                     </div>
                 </li>
             </ul>
-            <div class="wishlist">
-                <i class="fa-regular fa-heart"></i>
-                <i class="fa-solid fa-heart"></i>
+            <div class="wishlist" id="addWishlistBtn">
+            ${isWishlist ? '<i class="fa-solid fa-heart"></i>' : '<i class="fa-regular fa-heart"></i>'}
             </div>
             </div>
             <div class="detailedInfo">
@@ -114,6 +115,9 @@ async function displaySingleProduct() {
                         </div>
                     </div>
         `;
+        singleProduct.querySelector('#addWishlistBtn').addEventListener('click', () => {
+            addToWishlist(product.id)
+        })
         selectColorAndSize();
         document.querySelector('#minus').addEventListener('click', () => quantitySelect('minus'));
         document.querySelector('#plus').addEventListener('click', () => quantitySelect('plus'));
@@ -141,7 +145,7 @@ function renderColors(colors) {
         .join('')
 }
 
-function renderStars(rating) {
+export function renderStars(rating) {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 !== 0;
     const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
@@ -172,8 +176,6 @@ function quantitySelect(type) {
         quantity.innerText = currentQuantity - 1;
     }
 }
-
-
 
 function selectColorAndSize() {
     document.querySelectorAll('.sizeOption').forEach(button => {

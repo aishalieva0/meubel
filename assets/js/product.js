@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 export async function displayProducts(products) {
     productContent.innerHTML = '';
-    products.map(product => {
-        productContent.innerHTML +=
-            `<div class="card">
+    if (products.length > 0) {
+        products.map(product => {
+            productContent.innerHTML +=
+                `<div class="card">
                 <a href="./single-product.html?id=${product.id}"">
                     <div class="cardImg">
                         <img src="${product.image}" alt="${product.title}">
@@ -23,7 +24,13 @@ export async function displayProducts(products) {
                     </div>
                 </a>
             </div>`
-    })
+        });
+    } else {
+        productContent.innerHTML =
+            `<div class="notFound">
+                <p>No products found  :(</p>
+            </div>`
+    }
     updatePagination(products.length);
 }
 
