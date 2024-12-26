@@ -129,23 +129,24 @@
                             <img id="gridStyle" src="../assets/img/icons/Vector (6).png" alt="filter">
                             <img id="listStyle" src="../assets/img/icons/Vector (7).png" alt="filter">
                         </div>
-                        <p>Showing 1–16 of 32 results</p>
+                        <p>Showing <span class="showStart">1</span>-<span class="showEnd">16</span> of <span
+                                class="totalProducts">32</span> results</p>
                     </div>
                     <div class="right">
                         <div class="show">
                             <p>Show</p>
-                            <input type="number" value="16">
+                            <input type="number" class="itemsPerPageCount">
                         </div>
                         <div class="shortBy">
                             <p>Short by</p>
                             <span id="shortBy">Default</span>
                             <div class="shortByDropdown">
                                 <ul class="dropdownList">
-                                    <li class="dropdownItem">Default</li>
-                                    <li class="dropdownItem">Price, Low to High</li>
-                                    <li class="dropdownItem">Price, High to Low</li>
-                                    <li class="dropdownItem">Alphabetical (A-Z)</li>
-                                    <li class="dropdownItem">Alphabetical (Z-A)</li>
+                                    <li id="default" class="dropdownItem">Default</li>
+                                    <li id="priceLowToHigh" class="dropdownItem">Price, Low to High</li>
+                                    <li id="priceHighToLow" class="dropdownItem">Price, High to Low</li>
+                                    <li id="a-z" class="dropdownItem">Alphabetical (A-Z)</li>
+                                    <li id="z-a" class="dropdownItem">Alphabetical (Z-A)</li>
                                 </ul>
                             </div>
                         </div>

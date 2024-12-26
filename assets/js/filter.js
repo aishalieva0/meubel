@@ -22,11 +22,17 @@ const productContent = document.querySelector('#productContent');
 const gridStyle = document.querySelector('#gridStyle');
 const listStyle = document.querySelector('#listStyle');
 const paginationContainer = document.querySelector('.pagination');
+const totalProducts = document.querySelector('.totalProducts');
+const showStart = document.querySelector('.showStart');
+const showEnd = document.querySelector('.showEnd');
+const itemsPerPageCount = document.querySelector('.itemsPerPageCount');
+const sortByOptions = document.querySelectorAll('.shortByDropdown .dropdownItem');
 
 document.addEventListener('DOMContentLoaded', async () => {
     products = await window.getProducts();
     filteredProducts = products;
     pagination.currentPage = 1;
+    itemsPerPageCount.value = pagination.itemsPerPage;
     const paginatedProducts = applyPagination(filteredProducts);
     displayProducts(paginatedProducts);
     updatePagination(filteredProducts.length);
@@ -34,6 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     displaySizes();
     displayCategories();
     triggerFilters();
+    shortBy();
 });
 
 function applyFilters() {
@@ -141,7 +148,6 @@ document.querySelector('.clearAll').addEventListener('click', () => {
     updatePagination(filteredProducts.length);
 });
 
-
 filterCloseBtn.addEventListener('click', () => {
     filterBox.classList.remove('active');
     console.log(product)
@@ -171,6 +177,8 @@ function applyPagination(products) {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
+    showStart.innerText = startIndex + 1;
+    showEnd.innerText = Math.min(endIndex, products.length);
     return products.slice(startIndex, endIndex);
 }
 
@@ -213,5 +221,49 @@ export function updatePagination(totalItems) {
         const paginatedProducts = applyPagination(filteredProducts);
         displayProducts(paginatedProducts);
         updatePagination(filteredProducts.length);
+    });
+
+    totalProducts.textContent = totalItems;
+}
+
+itemsPerPageCount.addEventListener('input', () => {
+    const count = itemsPerPageCount.value;
+    if (count > 0) {
+        pagination.itemsPerPage = count;
+        pagination.currentPage = 1;
+        const paginatedProducts = applyPagination(filteredProducts);
+        displayProducts(paginatedProducts);
+        updatePagination(filteredProducts.length);
+    }
+});
+
+function shortBy() {
+    sortByOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const chosen = option.id;
+            console.log(filteredProducts.sort())
+            switch (chosen) {
+                case 'priceLowToHigh':
+                    filteredProducts.sort((a, b) => a.price - b.price);
+                    break;
+                case 'priceHighToLow':
+                    filteredProducts.sort((a, b) => b.price - a.price);
+                    break;
+                case 'a-z':
+                    filteredProducts.sort((a, b) => a.title.localeCompare(b.title));
+                    break;
+                case 'z-a':
+                    filteredProducts.sort((a, b) => b.title.localeCompare(a.title));
+                    break;
+                case 'default':
+                default:
+                    filteredProducts.sort((a, b) => a.id - b.id);
+                    break;
+            }
+            pagination.currentPage = 1;
+            const paginatedProducts = applyPagination(filteredProducts);
+            displayProducts(paginatedProducts);
+            updatePagination(filteredProducts.length);
+        });
     });
 }
