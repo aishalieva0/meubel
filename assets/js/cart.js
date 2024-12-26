@@ -156,13 +156,7 @@ export function displayCartBox() {
 }
 
 displayCartBox()
-cartBtn.addEventListener('click', () => {
-    dropdownCart.classList.add('activeFlex')
-})
-const closeCartBoxBtn = document.querySelector('#closeCartBoxBtn');
-closeCartBoxBtn.addEventListener('click', () => {
-    dropdownCart.classList.remove('activeFlex')
-})
+
 
 function totalCount() {
     let totalCount = 0;

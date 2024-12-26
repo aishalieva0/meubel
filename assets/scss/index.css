@@ -40,6 +40,14 @@ a {
 
 .layout {
   width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5647058824) !important;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  z-index: 1;
 }
 
 .titleSection {
@@ -184,12 +192,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   align-items: center;
   transition: 0.5s ease;
 }
-.header .container .row .navBar .userAreaList .userAreaItem #closeIcon {
-  display: none;
-  font-size: 23px;
-  font-weight: 400;
-  transition: 0.5s ease;
-}
 .header .container .row .navBar .userAreaList .userAreaItem .cartCount {
   position: absolute;
   left: 16px;
@@ -227,6 +229,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid #ddd;
+  border-radius: 5px;
 }
 .header .container .row .navBar .searchBox .searchContent .searchInput img {
   width: 18px;
@@ -239,6 +242,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   background: transparent;
   width: 100%;
   padding: 8px;
+}
+.header .container .row .navBar .searchBox .searchContent .searchInput #closeIcon {
+  font-weight: 400;
+  margin-right: 8px;
+  cursor: pointer;
 }
 .header .container .row .navBar .searchBox .searchContent .searchResult {
   position: absolute;

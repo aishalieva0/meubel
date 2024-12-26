@@ -13,21 +13,26 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('opened');
 })
 
-searchBtn.addEventListener('click', () => {
-    searchBox.classList.toggle('activeFlex');
+searchBtn.addEventListener('click', (e) => {
+    searchBox.classList.add('activeFlex');
     if (searchBox.className.includes('activeFlex')) {
-        closeIcon.style.display = 'block'
-        searchIcon.style.display = 'none'
-    } else {
-        closeIcon.style.display = 'none'
-        searchIcon.style.display = 'block'
+        layout.classList.add('active');
     }
 })
 
+closeIcon.addEventListener('click', () => {
+    searchBox.classList.remove('activeFlex');
+    layout.classList.remove('active');
+
+})
+
+
 layout.addEventListener('click', () => {
     searchBox.classList.remove('activeFlex')
-    closeIcon.style.display = 'none'
-    searchIcon.style.display = 'block'
+    closeIcon.style.display = 'none';
+    searchIcon.style.display = 'block';
+    dropdownCart.classList.remove('activeFlex');
+    layout.style.display = 'none';
 })
 
 navItems.forEach(navItem => {
@@ -35,3 +40,12 @@ navItems.forEach(navItem => {
         navItem.classList.add('isCurrent');
     }
 })
+
+cartBtn.addEventListener('click', () => {
+    dropdownCart.classList.add('activeFlex')
+})
+const closeCartBoxBtn = document.querySelector('#closeCartBoxBtn');
+closeCartBoxBtn.addEventListener('click', () => {
+    dropdownCart.classList.remove('activeFlex')
+})
+

@@ -63,7 +63,6 @@ if (window.location.pathname.includes('shop')) {
 
     filterCloseBtn.addEventListener('click', () => {
         filterBox.classList.remove('active');
-        console.log(product)
         product.style.width = '100%';
     });
 

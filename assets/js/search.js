@@ -6,7 +6,6 @@ async function searchProducts(value) {
     value.split(' ').filter(searchValue => {
         if (searchValue.length > 0) {
             searchedData = products.filter(product => product.title.toLowerCase().includes(searchValue.toLowerCase()))
-            console.log(searchedData)
         }
     });
     if (value.length > 0) {

@@ -91,13 +91,6 @@
               align-items: center;
               transition: 0.5s ease;
             }
-            #closeIcon {
-              display: none;
-              font-size: 23px;
-              font-weight: 400;
-              transition: 0.5s ease;
-            }
-
             .cartCount {
               position: absolute;
               left: 16px;
@@ -139,6 +132,8 @@
               align-items: center;
               justify-content: center;
               border-bottom: 1px solid #ddd;
+              border-radius: 5px;
+
 
               img {
                 width: 18px;
@@ -151,6 +146,12 @@
                 background: transparent;
                 width: 100%;
                 padding: 8px;
+              }
+
+              #closeIcon {
+                font-weight: 400;
+                margin-right: 8px;
+                cursor: pointer;
               }
             }
             .searchResult {
