@@ -25,7 +25,7 @@ function displaySearchResult(data) {
         data.map(product => {
             searchResultList.innerHTML +=
                 `<li class="resultItem">
-                    <a href="/pages/single-product.html?id=${product.id}">
+                    <a href="../pages/single-product.html?id=${product.id}">
                         <div class="productImg">
                             <img src="${product.image}" alt="${product.title}">
                         </div>

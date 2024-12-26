@@ -1,4 +1,4 @@
-import { getProductById } from "/assets/js/single-product.js";
+import { getProductById } from "./single-product.js";
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cartCheckout = document.querySelector('#cartCheckout');
 const cartPage = document.querySelector('#cartPage');
@@ -139,7 +139,7 @@ export function displayCartBox() {
                 </div>
             </div>
             <div class="removeBtn">
-                <img src="/assets/img/icons/delete.png" alt="delete">
+                <img src="../assets/img/icons/delete.png" alt="delete">
             </div>
                 </li>`
             cartBox.querySelector('.removeBtn').addEventListener('click', () => {

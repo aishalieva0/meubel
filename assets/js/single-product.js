@@ -1,4 +1,4 @@
-import { addToCart, displayCartBox } from "/assets/js/cart.js";
+import { addToCart, displayCartBox } from "./cart.js";
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 const singleProduct = document.querySelector('#singleProduct');

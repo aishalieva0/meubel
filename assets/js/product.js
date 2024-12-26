@@ -33,7 +33,7 @@ async function displayTopPicks(products, limit) {
     topPicksProducts.map(product => {
         topPicks.innerHTML +=
             `<div class="card">
-                <a href="/pages/single-product.html?id=${product.id}"">
+                <a href="../pages/single-product.html?id=${product.id}"">
                     <div class="cardImg">
                         <img src="${product.image}" alt="${product.title}">
                     </div>

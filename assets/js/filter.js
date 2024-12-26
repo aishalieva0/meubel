@@ -1,4 +1,4 @@
-import { displayProducts } from '/assets/js/product.js';
+import { displayProducts } from './product.js';
 let categories = [];
 let sizes = [];
 let colors = [];
