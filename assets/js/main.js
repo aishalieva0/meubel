@@ -17,13 +17,6 @@ navItems.forEach(navItem => {
     }
 })
 
-cartBtn.addEventListener('click', () => {
-    dropdownCart.classList.add('activeFlex')
-})
-closeCartBoxBtn.addEventListener('click', () => {
-    dropdownCart.classList.remove('activeFlex')
-})
-
 function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);

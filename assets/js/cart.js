@@ -23,7 +23,7 @@ function displayCartPage() {
             <span class="price">${product.price}$</span>
             <span class="color" style="background:${product.color}"></span>
             <span class="size">${product.size}</span>
-            <input class="quantity" type="number" value="${product.quantity}">
+            <input disabled class="quantity" type="number" value="${product.quantity}">
             <span class="subTotal">${(product.price * product.quantity).toFixed(2)}$</span>
             <img class="delete" src="../assets/img/icons/ant-design_delete-filled.png" alt="delete">
         </li> `
@@ -72,7 +72,7 @@ export function displayCartBox() {
         <div class="empty"><p>Cart is empty</p></div>`;
         bottom.style.display = 'none'
     }
-    totalCount()
+    totalCount();
 }
 export async function addToCart(id) {
     const product = await getProductById(id);
@@ -135,6 +135,7 @@ function calculateTotalCart() {
     });
     total.textContent = `${totalSum.toFixed(2)}$`;
 }
+calculateTotalCart()
 
 function displayCheckout() {
     cartCheckout.innerHTML = '';
@@ -153,11 +154,6 @@ function displayCheckout() {
     })
     calculateTotalCart();
 }
-
-if (!cart) {
-    displayCartBox()
-}
-
 function totalCount() {
     let totalCount = 0;
     cart.forEach(item => {
@@ -170,3 +166,12 @@ function totalCount() {
         cartCount.style.display = 'flex';
     }
 }
+
+cartBtn.addEventListener('click', () => {
+    dropdownCart.classList.add('activeFlex')
+    displayCartBox()
+});
+
+closeCartBoxBtn.addEventListener('click', () => {
+    dropdownCart.classList.remove('activeFlex')
+})

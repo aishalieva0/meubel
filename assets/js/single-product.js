@@ -1,4 +1,4 @@
-import { addToCart, displayCartBox } from "./cart.js";
+import { addToCart } from "./cart.js";
 import { addToWishlist } from "./wishlist.js";
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
