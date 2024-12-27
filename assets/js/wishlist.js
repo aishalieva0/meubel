@@ -26,7 +26,6 @@ export async function addToWishlist(id) {
 }
 
 function displayWishlistPage() {
-    console.log(wishlist)
     wishlistPage.innerHTML = '';
     if (wishlist.length>0) {
         wishlist.map(item => {
